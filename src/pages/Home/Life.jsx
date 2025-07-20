@@ -1,7 +1,6 @@
 import React from 'react';
 
 import life from "../../assets/pictures/webPics/life2.mp4";
-import lifePoster from "../../assets/pictures/webPics/lifePoster.PNG";
 import CustomVideoPlayer from '../../components/CustomVideoPlayer';
 
 function Life() {

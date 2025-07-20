@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import videojs from "video.js";
 import 'video.js/dist/video-js.css';
 
-const CustomVideoPlayer = ({ src, poster }) => {
+const CustomVideoPlayer = ({ src }) => {
   const videoRef = useRef(null);
   const playerRef = useRef(null);
   const containerRef = useRef(null);
@@ -10,41 +10,34 @@ const CustomVideoPlayer = ({ src, poster }) => {
   const [showPlayButton, setShowPlayButton] = useState(true);
 
   useEffect(() => {
-    // Initialize Video.js player
     if (videoRef.current) {
       const player = videojs(videoRef.current, {
-        controls: false, // disable default controls
-        // poster: poster,
+        controls: false, 
         autoplay: false,
-        muted: true, // for autoplay
-        sources: [{ src: src, type: 'video/mp4' }], // adjust type if needed
+        muted: true, 
+        sources: [{ src: src, type: 'video/mp4' }]
       });
 
       playerRef.current = player;
 
-      // Set loop attribute
       player.ready(() => {
         player.loop(true);
       });
 
-      // Event: when video ends
       player.on('ended', () => {
         setShowPlayButton(true);
         setIsPlaying(false);
       });
 
-      // Optional: Handle play/pause state if needed
       player.on('play', () => {
         setIsPlaying(true);
         setShowPlayButton(false);
       });
       player.on('pause', () => {
         setIsPlaying(false);
-        // Keep showPlayButton based on your logic
       });
     }
 
-    // Cleanup on unmount
     return () => {
       if (playerRef.current) {
         playerRef.current.dispose();
@@ -65,44 +58,15 @@ const CustomVideoPlayer = ({ src, poster }) => {
       id='videoHolder'
       style={{ position: 'relative', width: '100%', maxWidth: '100%' }}
     >
-      {/* Video.js player */}
       <video
         ref={videoRef}
         className='video-js'
         style={{ width: '100%', height: '100%' }}
-        // poster={poster}
       />
 
-      {/* Overlay Play Button */}
       {showPlayButton && (
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            cursor: 'pointer',
-            backgroundColor: 'rgba(0, 0, 0, 0.3)', // semi-transparent background
-          }}
-          onClick={handlePlay}
-        >
-          <div
-            className='mainPurpleBg'
-            style={{
-              width: '60px',
-              height: '60px',
-              borderRadius: '50%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-            }}
-          >
-            {/* Play Icon (triangle) */}
+        <div className='videoPlayer_playBtnHolder' onClick={handlePlay}>
+          <div className='mainPurpleBg videoPlayer_playBtn' >
             <svg
               width='24'
               height='24'

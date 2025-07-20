@@ -469,6 +469,32 @@ a.active .navLink_items {
 }
 
 
+.videoPlayer_playBtnHolder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.videoPlayer_playBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+/* --------------------------------- Cart Page  --------------------------------- */
+
 .platformCard {
     width: 20px;
 }
@@ -491,8 +517,6 @@ a.active .navLink_items {
         font-size: 2rem;
     }
 }
-
-/* --------------------------------- Cart Page  --------------------------------- */
 
 .cartItemsHolder {
     min-height: 75vh;
