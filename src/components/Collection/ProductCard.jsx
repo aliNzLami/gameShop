@@ -11,13 +11,15 @@ function ProductCard({productItem, currencies}) {
 
 
     const clickHandler = () => {
-        if(location.pathname.includes("/product")) {
-            navigate(routesList.product.url.replace(':productId', productItem._id))
-            window.location.reload();
-        }
-        else {
-            navigate(routesList.product.url.replace(':productId', productItem._id))
-        }
+        // if(location.pathname.includes("/product")) {
+        //     navigate(routesList.product.url.replace(':productId', productItem._id))
+        //     window.location.reload();
+        // }
+        // else {
+        //     navigate(routesList.product.url.replace(':productId', productItem._id))
+        // }
+        navigate(routesList.product.url.replace(':productId', productItem._id))
+
     }
 
     return (
