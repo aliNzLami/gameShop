@@ -2,7 +2,7 @@ import React from 'react';
 
 import life from "../../assets/pictures/webPics/life2.mp4";
 import lifePoster from "../../assets/pictures/webPics/lifePoster.PNG";
-import CustomVideoPlayer from '../../components/CustomVideoPlayer';
+// import CustomVideoPlayer from '../../components/CustomVideoPlayer';
 
 function Life() {
     return (
@@ -28,10 +28,10 @@ function Life() {
                 </div>
 
                 <div className="w-full sm:w-1/2 flex justify-end">
-                    <CustomVideoPlayer
+                    {/* <CustomVideoPlayer
                         src={life}
                         poster={lifePoster}
-                    />
+                    /> */}
                 </div>
             </div>
         </>
