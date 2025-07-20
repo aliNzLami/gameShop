@@ -12,7 +12,7 @@ import OrdersProvider from './assets/context/OrdersContext.jsx';
 import ProfileContextProvider from './assets/context/ProfileContext.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/gameShop'>
     <RouteContextProvider>
       <ShopContextProvider>
         <SearchContextProvider>
