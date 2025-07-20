@@ -1,0 +1,73 @@
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+// context
+import { InCartContext } from '../../assets/context/InCartContext';
+import { RouteContext } from '../../assets/context/RouteContext';
+import { ProfileContext } from '../../assets/context/ProfileContext';
+
+// component
+import Container from "../../components/Container";
+import CartItem from './CartItem';
+import TotalAmount from './TotalAmount';
+import { toast } from 'react-toastify';
+
+function Cart() {
+
+    const navigate = useNavigate();
+
+    // ---------------------------------- Context ---------------------------------- //
+    const { inCartItems } = useContext(InCartContext);
+    const { profile } = useContext(ProfileContext);
+    const routesList = useContext(RouteContext);
+
+    // ---------------------------------- Function ---------------------------------- //
+    const proceedClick = () => {
+        if(profile) {
+            navigate(routesList.orders.url);
+        }
+        else {
+            toast.info("First, Login to Your Profile");
+            navigate(routesList.login.url);
+        }
+    }
+
+
+    return (
+        <>
+            <Container>
+                <div className="cartItemsHolder flex flex-col justify-between">
+                    {
+                        inCartItems && inCartItems.length
+                        ?
+                            inCartItems.map((item, index) => {
+                                return (
+                                    <div key={Math.random()}>
+                                        <CartItem 
+                                            item={item}
+                                            index={index}
+                                        />
+                                    </div>
+                                )
+                            })
+                        :
+                        <div className='flex justify-center font-medium noItemCart'>
+                            Your Cart Is Empty
+                        </div>
+                    }
+
+                    <div className="flex justify-end mt-20 mb-30">
+                        <div className="w-full sm:w-[300px]">
+                            <TotalAmount 
+                                navigateTitle={"PROCEED TO CHECKOUT"}
+                                onClickBtn={proceedClick}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </>
+    )
+}
+
+export default Cart
