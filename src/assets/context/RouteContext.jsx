@@ -14,16 +14,16 @@ export const RouteContext = createContext();
 
 const RouteContextProvider = (props) => {
     const routesList = {
-        home: { name: "HOME", url: "/LifeGame/", element: <Home /> },
-        login: { name: "LOGIN", url: "/LifeGame/login", element: <Login /> },
-        about: { name: "ABOUT US", url: "/LifeGame/about", element: <About /> },
-        orders: { name: "ORDERS", url: "/LifeGame/orders", element: <Orders /> },
-        ordersList: { name: "ORDERS LIST", url: "/LifeGame/ordersList", element: <OrdersList /> },
-        product: { name: "PRODUCT", url: "/LifeGame/product/:productId", element: <Product /> },
-        contact: { name: "CONTACT", url: "/LifeGame/contact", element: <Contact /> },
-        collection: { name: "COLLECTION", url: "/LifeGame/collection", element: <Collection /> },
-        cart: { name: "CART", url: "/LifeGame/cart", element: <Cart /> },
-        profile: { name: "Profile", url: "/LifeGame/profile", element: <Profile /> },
+        home: { name: "HOME", url: "/gameShop/", element: <Home /> },
+        login: { name: "LOGIN", url: "/gameShop/login", element: <Login /> },
+        about: { name: "ABOUT US", url: "/gameShop/about", element: <About /> },
+        orders: { name: "ORDERS", url: "/gameShop/orders", element: <Orders /> },
+        ordersList: { name: "ORDERS LIST", url: "/gameShop/ordersList", element: <OrdersList /> },
+        product: { name: "PRODUCT", url: "/gameShop/product/:productId", element: <Product /> },
+        contact: { name: "CONTACT", url: "/gameShop/contact", element: <Contact /> },
+        collection: { name: "COLLECTION", url: "/gameShop/collection", element: <Collection /> },
+        cart: { name: "CART", url: "/gameShop/cart", element: <Cart /> },
+        profile: { name: "Profile", url: "/gameShop/profile", element: <Profile /> },
     };
 
     return (
