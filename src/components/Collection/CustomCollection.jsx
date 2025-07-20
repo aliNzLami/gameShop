@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard"
 function CustomCollection({ text1, text2, description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quod perferendis", productList, marginTop = true }) {
 
     const shopData = useContext(ShopContext);
-
+    
     return (
         <div className={`collectionHolder ${marginTop && 'mt-20'}`}>
             <div className="showSmoothly">

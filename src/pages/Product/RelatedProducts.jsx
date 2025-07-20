@@ -24,15 +24,15 @@ function RelatedProducts({ selectedProduct }) {
     useEffect(() => {
       make_relatedList();
     }, [])
-    
+
     return (
         <>
             {
                 relatedProducts.length 
                 ?
                     <CustomCollection 
-                        text1={"RELATED"}
-                        text2={"COLLECTION"}
+                        text1={"More of"}
+                        text2={selectedProduct.productData.company[0].name}
                         productList={relatedProducts}
                     />
 

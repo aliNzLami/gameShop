@@ -1,14 +1,28 @@
 import React, { useContext } from 'react';
 import { RouteContext } from '../../assets/context/RouteContext';
-
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function ProductCard({productItem, currencies}) {
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const routesList = useContext(RouteContext);
+
+
+    const clickHandler = () => {
+        if(location.pathname.includes("/product")) {
+            navigate(routesList.product.url.replace(':productId', productItem._id))
+            window.location.reload();
+        }
+        else {
+            navigate(routesList.product.url.replace(':productId', productItem._id))
+        }
+    }
 
     return (
         <div className='text-gray-700 cursor-pointer'>
-            <a className='cardLink' href={routesList.product.url.replace(':productId', productItem._id)}>
+            <div className='cardLink' onClick={clickHandler}>
                 <div className="overflow-hidden imgRatio productCard_imgHolder">
                     <div>
                         <img className='hover:scale-110 transition ease-in-out' src={productItem.pic} />
@@ -25,7 +39,7 @@ function ProductCard({productItem, currencies}) {
                         { productItem.price }
                     </span>
                 </p>
-            </a>
+            </div>
         </div>
     )
 }

@@ -67,8 +67,9 @@ function Product() {
 
             </div>
             <ProductReviews selectedProduct={selectedProduct} />
-
+            
             <RelatedProducts selectedProduct={selectedProduct} />
+            
           </Container>
         :
           <div className='flex justify-center items-center minH500'>
