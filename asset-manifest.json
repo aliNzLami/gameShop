@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/gameShop/static/css/main.2b155a86.css",
-    "main.js": "/gameShop/static/js/main.b4ba47db.js",
+    "main.css": "/gameShop/static/css/main.f42aa9c4.css",
+    "main.js": "/gameShop/static/js/main.6a388fe6.js",
     "static/js/453.eceb19e0.chunk.js": "/gameShop/static/js/453.eceb19e0.chunk.js",
     "static/media/watchdogs2.png": "/gameShop/static/media/watchdogs2.3fbc1793b195eb35acd3.png",
-    "static/media/lifePoster.PNG": "/gameShop/static/media/lifePoster.1d14d426de4cf1445acd.PNG",
     "static/media/tekken8.png": "/gameShop/static/media/tekken8.a43971db854273490789.png",
     "static/media/alanwake2.jpg": "/gameShop/static/media/alanwake2.7e68969cda0d672ed9e8.jpg",
     "static/media/life2.mp4": "/gameShop/static/media/life2.3f55dd84d02bd930887a.mp4",
@@ -61,12 +60,12 @@
     "static/media/squareEnix.png": "/gameShop/static/media/squareEnix.9db030becb5ec336f953.png",
     "static/media/profile.svg": "/gameShop/static/media/profile.7a271b24f0b65e0e672cfa589f169b6d.svg",
     "index.html": "/gameShop/index.html",
-    "main.2b155a86.css.map": "/gameShop/static/css/main.2b155a86.css.map",
-    "main.b4ba47db.js.map": "/gameShop/static/js/main.b4ba47db.js.map",
+    "main.f42aa9c4.css.map": "/gameShop/static/css/main.f42aa9c4.css.map",
+    "main.6a388fe6.js.map": "/gameShop/static/js/main.6a388fe6.js.map",
     "453.eceb19e0.chunk.js.map": "/gameShop/static/js/453.eceb19e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b155a86.css",
-    "static/js/main.b4ba47db.js"
+    "static/css/main.f42aa9c4.css",
+    "static/js/main.6a388fe6.js"
   ]
 }
