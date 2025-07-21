@@ -1,8 +1,7 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './App.css'
 import App from './App.jsx';
-import {BrowserRouter} from "react-router-dom"
+import {BrowserRouter, HashRouter} from "react-router-dom"
 import reportWebVitals from './reportWebVitals';
 import ShopContextProvider from './assets/context/ShopContext.jsx';
 import RouteContextProvider from './assets/context/RouteContext.jsx';
@@ -12,7 +11,7 @@ import OrdersProvider from './assets/context/OrdersContext.jsx';
 import ProfileContextProvider from './assets/context/ProfileContext.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename='/gameShop'>
+  <HashRouter>
     <RouteContextProvider>
       <ShopContextProvider>
         <SearchContextProvider>
@@ -26,7 +25,7 @@ createRoot(document.getElementById('root')).render(
         </SearchContextProvider>
       </ShopContextProvider>
     </RouteContextProvider>
-  </BrowserRouter>,
+  </HashRouter>,
 )
 
 reportWebVitals();

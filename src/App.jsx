@@ -21,14 +21,16 @@ function App() {
 
     <SearchBar />
       <Routes>
-        {
-          Object.entries(routesList).map( (route) => {
-            // route --> ['home', {…}] 
-            return (
-              <Route key={route[0]} path={route[1].url} element={route[1].element} />
-            )
-          } )
-        }
+        <Route key="gameShop">
+          {
+            Object.entries(routesList).map( (route) => {
+              // route --> ['home', {…}] 
+              return (
+                <Route key={route[0]} path={route[1].url} element={route[1].element} />
+              )
+            } )
+          }
+        </Route>
       </Routes>
 
     <Footer />
