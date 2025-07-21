@@ -12,10 +12,6 @@
     font-family: Outfit;
 }
 
-body{
-    overflow-x: hidden;
-}
-
 :root {
     --main-purple: rgb(51, 0, 123);
     --main-gray: #00000027;
