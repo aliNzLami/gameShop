@@ -13,11 +13,13 @@ function LatesCollection() {
 
     
     return (
-        <CustomCollection 
-            text1={'LATEST'} 
-            text2={"COLLECTIONS"}
-            productList={latestProduct}
-        />
+        <section>
+            <CustomCollection 
+                text1={'LATEST'} 
+                text2={"COLLECTIONS"}
+                productList={latestProduct}
+            />
+        </section>
     )
 }
 

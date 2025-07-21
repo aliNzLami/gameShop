@@ -14,13 +14,13 @@ function BestSeller() {
     }, [])
 
     return (
-        <div className='mb-10'>
+        <section className='mb-10'>
             <CustomCollection
                 text1={'BEST'} 
                 text2={"SELLERS"}
                 productList={bestSellers}
             />
-        </div>
+        </section>
     )
 }
 

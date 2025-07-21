@@ -28,55 +28,59 @@ function Contact() {
     return (
       <>
         <Container>
-          <div className="text-center text-2xl pt-10 mainBorder-t">
-            <div className='showSmoothly'>
-              <Title text1='CONTACT' text2='US' />
+          <section>
+            <div className="text-center text-2xl pt-10 mainBorder-t">
+              <div className='showSmoothly'>
+                <Title text1='CONTACT' text2='US' />
+              </div>
             </div>
-          </div>
 
-          <div className="my-10 flex flex-col justify-center md:flex-row gap-10 mb-28">
-            <img className='w-full md:max-w-[500px] showSmoothly' src={contact} />
+            <div className="my-10 flex flex-col justify-center md:flex-row gap-10 mb-28">
+              <img className='w-full md:max-w-[500px] showSmoothly' src={contact} />
 
-            <div className='flex flex-col justify-center items-center items-start gap-6 showSmoothly_toLeft'>
-              {
-                Object.entries(storeInfo).map((item, index) => {
-                  // item[0] = key
-                  // item[1] = value
-                  return(
-                      <p key={index} className={item[0] === "title" ? "font-semibol text-xl text-gray-800" : "text-gray-400"}>
-                        {
-                          item[0] === "title"
-                          ?
-                            item[1]
-                          :
-                          `${item[0]}: ${item[1]}`
-                        }
-                      </p>
-                  )
-                })
-              }
-              
-              {
-                Object.entries(careerInfo).map((item, index) => {
-                  // item[0] = key
-                  // item[1] = value
-                  return(
-                      <p key={index} className={item[0] === "title" ? "font-semibol text-xl text-gray-800" : "text-gray-400"}>
-                        {
-                          item[0] !== "btn"
-                          ?
-                            item[1]
-                          :
-                          <button className='text-white cursor-pointer mainPurpleBg rounded px-3 py-2'>
-                              { item[1] }
-                          </button>
-                        }
-                      </p>
-                  )
-                })
-              }
+              <address>
+                <div className='flex flex-col justify-center items-center items-start gap-6 showSmoothly_toLeft'>
+                  {
+                    Object.entries(storeInfo).map((item, index) => {
+                      // item[0] = key
+                      // item[1] = value
+                      return(
+                          <p key={index} className={item[0] === "title" ? "font-semibol text-xl text-gray-800" : "text-gray-400"}>
+                            {
+                              item[0] === "title"
+                              ?
+                                item[1]
+                              :
+                              `${item[0]}: ${item[1]}`
+                            }
+                          </p>
+                      )
+                    })
+                  }
+                  
+                  {
+                    Object.entries(careerInfo).map((item, index) => {
+                      // item[0] = key
+                      // item[1] = value
+                      return(
+                          <p key={index} className={item[0] === "title" ? "font-semibol text-xl text-gray-800" : "text-gray-400"}>
+                            {
+                              item[0] !== "btn"
+                              ?
+                                item[1]
+                              :
+                              <button className='text-white cursor-pointer mainPurpleBg rounded px-3 py-2'>
+                                  { item[1] }
+                              </button>
+                            }
+                          </p>
+                      )
+                    })
+                  }
+                </div>
+              </address>
             </div>
-          </div>
+          </section>
         </Container>
 
         <Subscribe />

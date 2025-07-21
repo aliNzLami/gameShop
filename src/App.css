@@ -17,6 +17,10 @@
     --main-gray: #00000027;
 }
 
+address * {
+    font-style: normal;
+}
+
 .mainPurpleText {
     color: var(--main-purple);
 }

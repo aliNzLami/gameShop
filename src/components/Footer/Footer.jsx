@@ -36,21 +36,21 @@ function Footer() {
                         </p>
                     </div>
 
-                    <div>
+                    <nav>
                         <FooterLinks 
                             title={"SHOP"}
                             list={footerLinks}
                             isItRoute={true}
                         />
-                    </div>
+                    </nav>
 
-                    <div>
+                    <address>
                         <FooterLinks 
                             title={"GET IN TOUCH"}
                             list={footerContacts}
                             isItRoute={false}
                         />
-                    </div>
+                    </address>
                 </div>
             </Container>
 

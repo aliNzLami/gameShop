@@ -30,48 +30,52 @@ function About() {
     return (
       <>
         <Container>
-          <div className="text-2xl text-center pt-20 mainBorder-t">
-            <div className='showSmoothly'>
-              <Title text1='ABOUT' text2='US' />
+          <article>
+            <div className="text-2xl text-center pt-20 mainBorder-t">
+              <div className='showSmoothly'>
+                <Title text1='ABOUT' text2='US' />
+              </div>
             </div>
-          </div>
 
-          <div className="my-10 flex flex-col md:flex-row gap-15">
-            <img className='w-full md:max-w-[500px] showSmoothly' src={pic} />
+            <div className="my-10 flex flex-col md:flex-row gap-15">
+              <img className='w-full md:max-w-[500px] showSmoothly' src={pic} />
 
-            <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600 showSmoothly_toLeft'>
+              <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600 showSmoothly_toLeft'>
+                {
+                  content.map((item, index) => {
+                    return(
+                      <p className={item === "Our Mission" && "font-bold"} key={index}>
+                          { item }
+                      </p>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </article>
+
+          <section>
+            <div className="text-xl py-4">
+              <Title text1='WHY' text2='CHOOSE US' />
+            </div>
+
+            <div className="flex flex-col md:flex-row text-sm mb-20">
               {
-                content.map((item, index) => {
-                  return(
-                    <p className={item === "Our Mission" && "font-bold"} key={index}>
-                        { item }
-                    </p>
+                whyUs.map((item, index) => {
+                  return (
+                    <div key={index} className="mainBorder px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-6">
+                      <p className='font-bold'>
+                        { item.title }
+                      </p>
+                      <p className='text-gray-600'>
+                        { item.paragraph }
+                      </p>
+                    </div>
                   )
                 })
               }
             </div>
-          </div>
-
-          <div className="text-xl py-4">
-            <Title text1='WHY' text2='CHOOSE US' />
-          </div>
-
-          <div className="flex flex-col md:flex-row text-sm mb-20">
-            {
-              whyUs.map((item, index) => {
-                return (
-                  <div key={index} className="mainBorder px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-6">
-                    <p className='font-bold'>
-                      { item.title }
-                    </p>
-                    <p className='text-gray-600'>
-                      { item.paragraph }
-                    </p>
-                  </div>
-                )
-              })
-            }
-          </div>
+          </section>
         </Container>
           
         <Subscribe />

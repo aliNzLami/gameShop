@@ -24,7 +24,7 @@ function Navbar() {
 
     return (
       <Container>
-        <div className='flex items-center justify-between py-5 font-medium'>
+        <nav className='flex items-center justify-between py-5 font-medium'>
 
             <div className='w-15'>
               <Link to={routesList.home.url}>
@@ -35,7 +35,7 @@ function Navbar() {
             <NavItems items={navLinks} />
 
             <NavIcons navLinksList={navLinks} />
-        </div>
+        </nav>
       </Container>
     )
 }
