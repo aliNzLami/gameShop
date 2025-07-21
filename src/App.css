@@ -29,6 +29,12 @@
     margin: 0 auto;
 }
 
+@media (max-width: 800px) {
+    .container_custom {
+        padding: 0px 30px;
+    }
+}
+
 .imgRatio {
     position: relative;
 }
@@ -452,6 +458,15 @@ a.active .navLink_items {
     margin-left: 20px;
     width: 80px;
 }
+
+@media (max-width: 1022px) {
+    .addToCartSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 /* --------------------------------- Video Js  --------------------------------- */
 

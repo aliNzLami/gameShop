@@ -105,18 +105,20 @@ function AddToCartProduct({ selectedProduct, setSelectedProduct }) {
     
     return (
         Boolean(showAddToCart) &&
-        <>
-            <button onClick={addToCartHandler} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer">
-                ADD TO CART
-            </button>
-            <input onChange={inputOnChange} className='itemNumberInput py-2 px-2' placeholder='1' type="number" />
+        <div className='addToCartSection'>
+            <div>
+                <button onClick={addToCartHandler} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer">
+                    ADD TO CART
+                </button>
+                <input onChange={inputOnChange} className='itemNumberInput py-2 px-2' placeholder='1' type="number" />
+            </div>
 
             <div className='text-sm text-gray-500 flex flex-col gap-1 smallDescriptionProduct'>
                 <p>100% Original product</p>
                 <p>Cash on delivery is available on this product</p>
                 <p>Easy return and exchange policy within 7 days</p>
             </div>
-        </>
+        </div>
     )
 }
 
