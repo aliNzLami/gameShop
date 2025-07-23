@@ -4,13 +4,14 @@ import CustomCollection from '../../components/Collection/CustomCollection';
 
 function LatesCollection() {
 
-    const shopData = useContext(ShopContext);
+    const shopData = useContext(ShopContext) || {};
     const [ latestProduct, setLatestProduct ] = useState([]);
 
     useEffect(() => {
-      setLatestProduct(shopData.products.slice(0, 15));
+        if(shopData.products) {
+            setLatestProduct(shopData.products.slice(0, 15));
+        }
     }, [])
-
     
     return (
         <section>

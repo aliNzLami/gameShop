@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 // helper
 import { numberValidity } from '../../assets/helper/numberValidity';
@@ -21,9 +21,9 @@ import { toast } from 'react-toastify';
 function CartItem( { item, index } ) {
 
     // ----------------------------------- Context ----------------------------------- //
-    const routesList = useContext(RouteContext);
-    const { currencies } = useContext(ShopContext);
-    const { inCartItems, updateInCart } = useContext(InCartContext);
+    const routesList = useContext(RouteContext) || {};
+    const { currencies } = useContext(ShopContext) || {};
+    const { inCartItems, updateInCart } = useContext(InCartContext) || {};
 
     // ----------------------------------- State ----------------------------------- //
     const [modal, setModal] = useState(false);

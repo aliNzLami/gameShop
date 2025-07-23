@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { RouteContext } from '../../assets/context/RouteContext';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router';
 
 function ProductCard({productItem, currencies}) {
 
@@ -21,14 +21,14 @@ function ProductCard({productItem, currencies}) {
     }
 
     return (
-        <div className='text-gray-700 cursor-pointer'>
+        <div className='text-gray-700 cursor-pointer productCard'>
             <div className='cardLink' onClick={clickHandler}>
                 <div className="overflow-hidden imgRatio productCard_imgHolder">
                     <div>
                         <img className='hover:scale-110 transition ease-in-out' src={productItem.pic} />
                     </div>
                 </div>
-                <p className='pt-3 pb-1 text-sm'>
+                <p className='pt-3 pb-1 text-sm productCardName'>
                     { productItem.name }
                 </p>
                 <p className='text-sm font-medium'>

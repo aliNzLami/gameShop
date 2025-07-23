@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import {Link, useLocation, useNavigate } from "react-router-dom"
+import {Link, useLocation, useNavigate } from "react-router"
 
 // context
 import { SearchContext } from '../../assets/context/SearchContext';
@@ -29,10 +29,11 @@ function NavIcons({navLinksList}) {
     const [sumProducts, setSumProducts] = useState(null);
 
     // ---------------------------------- Context ---------------------------------- //
-    const { setShowSearch } = useContext(SearchContext);
-    const { profile, setLocalProfile, updateProfile } = useContext(ProfileContext);
-    const { inCartItems, setLocalItems } = useContext(InCartContext);
-    const { updateOrdersList } = useContext(OrdersContext);
+    const { setShowSearch } = useContext(SearchContext) || {};
+    const { profile, setLocalProfile, updateProfile } = useContext(ProfileContext) || {}
+    const { inCartItems, setLocalItems } = useContext(InCartContext) || {};
+    const { updateOrdersList } = useContext(OrdersContext) || {};
+
     const routesList = useContext(RouteContext);
 
     // ---------------------------------- Functions ---------------------------------- //
@@ -70,10 +71,12 @@ function NavIcons({navLinksList}) {
     }
 
     const onClickSearch = () => {
-        if(location.pathname !== routesList.collection.url) {
-            navigate(routesList.collection.url);
+        if(routesList) {
+            if(location.pathname !== routesList.collection.url) {
+                navigate(routesList.collection.url);
+            }
+            setShowSearch(true);
         }
-        setShowSearch(true);
     }
 
     const updateSumProducts = () => {
@@ -91,32 +94,38 @@ function NavIcons({navLinksList}) {
     // ---------------------------------- Effects ---------------------------------- //
 
     useEffect(() => {
-        setLocalItems();
-        setLocalProfile();
+        if(setLocalItems, setLocalProfile) {
+            setLocalItems();
+            setLocalProfile();
+        }
         checkMember();
     }, [])
     
     useEffect(() => {
-        updateSumProducts();
+        if(inCartItems) {
+            updateSumProducts();
+        }
     }, [inCartItems])
     
     return (
         <div className="flex items-center gap-6">
 
-            <div className='w-6.5 cursor-pointer' onClick={onClickSearch}>
+            <div className='w-6.5 cursor-pointer' data-testid='search' onClick={onClickSearch}>
                 <img src={search} />
             </div>
 
-            <Dropdown 
-                options={["My Profile", "Orders", `${profile && Object.keys(profile).length ? "Logout" : "Login"}`]} 
-                placeholder={ <img src={profileIcon} className='w-6.5' /> } 
-                boxHolderClassName="navbar_dropdown_holder" 
-                boxClassName="navbar_dropdown_box"
-                afterClick={onClickProfile}
-            />
+            <div data-testid='profile'>
+                <Dropdown 
+                    options={["My Profile", "Orders", `${profile && Object.keys(profile).length ? "Logout" : "Login"}`]} 
+                    placeholder={ <img src={profileIcon} className='w-6.5' /> } 
+                    boxHolderClassName="navbar_dropdown_holder" 
+                    boxClassName="navbar_dropdown_box"
+                    afterClick={onClickProfile}
+                />
+            </div>
 
-            <Link to={routesList.cart.url} >
-                <div className='w-7 cursor-pointer relative'>
+            <Link to={routesList?.cart?.url??""} >
+                <div data-testid='cart' className='w-7 cursor-pointer relative'>
                     <img src={cart}  />
                     <p className={`absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 ${sumProducts && "bg-red-700"}  text-white aspect-square rounded-full text-[8px]`}>
                         { sumProducts }

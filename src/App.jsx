@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route} from "react-router";
 
 // ---------------- PAGES
 import { RouteContext } from './assets/context/RouteContext';
@@ -23,6 +23,8 @@ function App() {
       <Routes>
         <Route key="gameShop">
           {
+            routesList
+            &&
             Object.entries(routesList).map( (route) => {
               // route --> ['home', {…}] 
               return (

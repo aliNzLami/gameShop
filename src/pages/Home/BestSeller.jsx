@@ -5,12 +5,14 @@ import CustomCollection from '../../components/Collection/CustomCollection';
 
 function BestSeller() {
 
-    const shopData = useContext(ShopContext);
+    const shopData = useContext(ShopContext) || {};
     const [ bestSellers, setBestSellers ] = useState([]);
 
     useEffect(() => {
-        const filteredProducts = shopData.products.filter(item => item.bestSeller);
-        setBestSellers(filteredProducts);
+        if(shopData.products) {
+            const filteredProducts = shopData.products.filter(item => item.bestSeller);
+            setBestSellers(filteredProducts);
+        }
     }, [])
 
     return (

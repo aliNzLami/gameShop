@@ -5,7 +5,7 @@ import starIcon from "../../assets/icons/iconPics/star.jpg";
 function ProductInfo({ currencies, productData }) {
     return (
         <>
-            <h1 className='font-medium text-2xl mt-2 productInfo_title'>
+            <h1 className='font-medium text-2xl mt-2 productInfo_title' data-testid='productName'>
                 { productData.name }
             </h1>
             <div className='flex items-center gap-1 mt-2 productInfo_title'>

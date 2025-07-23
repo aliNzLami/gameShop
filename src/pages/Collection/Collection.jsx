@@ -14,16 +14,15 @@ import { companies } from '../../assets/icons/companies';
 
 // components
 import FilterCollections from './FilterCollections';
-import CollectionItems from './CollectionItems';
 import Container from "../../components/Container";
-import Title from "../../components/Collection/Title";
 import CustomCollection from '../../components/Collection/CustomCollection';
 
 
 function Collection() {
 
-  const shopData = useContext(ShopContext);
-  const { searchContent } = useContext(SearchContext);
+  // ---------------------------------------------- Context
+  const shopData = useContext(ShopContext) || {};
+  const { searchContent } = useContext(SearchContext) ||  {};
   
   // ---------------------------------------------- Variables
 
@@ -164,7 +163,7 @@ function Collection() {
         setFilteredProducts([...new Set(newProducts_all)]);
       }
       else {
-        setFilteredProducts([...shopData.products]);
+        if(shopData.products) setFilteredProducts([...shopData.products]);
       }
       
     }
@@ -260,7 +259,7 @@ function Collection() {
       if(!searchContent) {
         applyFilters();
       }
-      if(searchContent.length > 2) {
+      if(searchContent && searchContent.length > 2) {
         for(let item in filteredProduct) {
           if(filteredProduct[item].name.toLowerCase().includes(searchContent.toLowerCase())) {
             newProducts.push(filteredProduct[item]);
@@ -272,7 +271,7 @@ function Collection() {
 
     // ---------------------------------------------- Effects
     useEffect(() => {
-      setFilteredProducts([...shopData.products]);
+      if(shopData.products) setFilteredProducts([...shopData.products]);
     }, [])
 
     useEffect(() => {
@@ -339,14 +338,14 @@ function Collection() {
           {
             filteredProduct.length
             ?
-              <>
+              <div data-testid='allCollectoins'>
                   <CustomCollection 
                     text1={'ALL'} 
                     text2={"COLLECTIONS"}
                     productList={filteredProduct}
                     marginTop={false}
                   />
-              </>
+              </div>
             :
               <p className='noFoundItem'>
                 {`${searchContent} have not been found`}

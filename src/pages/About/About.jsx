@@ -44,7 +44,7 @@ function About() {
                 {
                   content.map((item, index) => {
                     return(
-                      <p className={item === "Our Mission" && "font-bold"} key={index}>
+                      <p className={item === "Our Mission" ? "font-bold" : ""} key={index}>
                           { item }
                       </p>
                     )
@@ -63,7 +63,7 @@ function About() {
               {
                 whyUs.map((item, index) => {
                   return (
-                    <div key={index} className="mainBorder px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-6">
+                    <div key={index} className="whyChooseUsBox mainBorder px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-6">
                       <p className='font-bold'>
                         { item.title }
                       </p>

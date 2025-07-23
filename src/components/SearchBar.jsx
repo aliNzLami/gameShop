@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react'
+import { useLocation } from 'react-router';
 
 // context
 import { SearchContext } from '../assets/context/SearchContext';
@@ -18,7 +18,7 @@ function SearchBar() {
     const location = useLocation();
 
     // ---------------------------------- Context ---------------------------------- //
-    const { showSearch, setShowSearch, searchContent, setSearchContent } = useContext(SearchContext);
+    const { showSearch, setShowSearch, searchContent, setSearchContent } = useContext(SearchContext) || {};
     const routesList = useContext(RouteContext);
 
 
@@ -29,9 +29,11 @@ function SearchBar() {
     }
 
     useEffect(() => {
-      if(location.pathname !== routesList.collection.url) {
-        clearSearch();
-      }
+        if(routesList) {
+            if(location.pathname !== routesList.collection.url) {
+                clearSearch();
+            }
+        }
     }, [location])
     
 
@@ -41,7 +43,7 @@ function SearchBar() {
                 showSearch 
                 ?
                     <Container>
-                        <div className='searchBarBox showSmoothly bg-gray-50 text-center'>
+                        <div className='searchBarBox showSmoothly bg-gray-50 text-center' data-testid='searchBar'>
                             <div className="inline-flex items-center justify-center border border-gray-400 px-5 py-0 my-5 mx-3 rounded-full w-3/4 sm:w-1/2">
                                 <input 
                                     type="search" 
@@ -49,6 +51,7 @@ function SearchBar() {
                                     className='flex-1 outline-none bg-inherit text-sm p-2' 
                                     value={searchContent}
                                     onChange={(searchTyped) => setSearchContent(searchTyped.target.value)}
+                                    data-testid='searchInput'
                                 />
                             </div>
                             <img 

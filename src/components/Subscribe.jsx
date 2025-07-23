@@ -10,7 +10,7 @@ function Subscribe() {
         <aside>
             <div className='text-center showSmoothly mt-25 py-25 mainPurpleBg subscribe'>
                 <p className='text-2xl font-medium text-gray-800 text-white'>
-                    Subscriben Now & Get 20% Off
+                    Subscribe Now & Get 20% Off
                 </p>
                 <p className='mt-3 text-gray-400'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, maiores

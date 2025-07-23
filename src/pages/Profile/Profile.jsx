@@ -13,7 +13,7 @@ import { toast } from 'react-toastify';
 
 function Profile() {
 
-    const { profile, updateProfile } = useContext(ProfileContext);
+    const { profile, updateProfile } = useContext(ProfileContext) || {};
 
     const profileContent = [
       {
@@ -152,12 +152,10 @@ function Profile() {
                       Submit
                     </button>
                   :
-                    <button onClick={() => setCanEdit(!canEdit)} className='mainPurpleBg text-white cursor-pointer px-4 py-2 rounded'>
+                    <button onClick={() => setCanEdit(!canEdit)} className='mainPurpleBg text-white cursor-pointer px-4 py-2 rounded' data-testid='editProfile'>
                       Edit
                     </button>
                 }
-
-                
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {NavLink, useLocation} from "react-router-dom";
+import {NavLink, useLocation} from "react-router";
 
 import icon from "../assets/icons/iconPics/offcanvas.png";
 import logo from "../assets/pictures/shopLogo/logo.jpeg";
@@ -60,7 +60,7 @@ function Offcanvas({ navLinksList }) {
             </button>
           </div>
           <div style={{ marginTop: '20px' }}>
-            <ul>
+            <ul data-testid='navbar_mobile'>
               {
                 navLinksList.map( (eachNav) => {
                     return (

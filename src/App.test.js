@@ -1,8 +1,27 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+//general components
+import Subscribe from './components/Subscribe';
+
+// ----------------------------- Subscribe
+
+test('shows subscription promo', () => {
+  render(<Subscribe/>);
+  expect(screen.queryByText(/subscribe now/i)).toBeInTheDocument();
+  expect(screen.queryByText(/20% off/i)).toBeInTheDocument();
 });
+
+
+
+test('email input and submit button render', () => {
+  render(<Subscribe />);
+  const input = screen.getByPlaceholderText(/enter your email/i);
+  const button = screen.getByRole('button');
+
+  expect(input).toBeInTheDocument();
+  expect(button).toBeInTheDocument();
+});
+
+
+

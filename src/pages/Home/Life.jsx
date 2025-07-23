@@ -29,9 +29,7 @@ function Life() {
                 <div className="w-full sm:w-1/2 flex justify-end">
                     <CustomVideoPlayer
                         src={life}
-                        // poster={lifePoster}
                     />
-                    
                 </div>
             </div>
         </header>

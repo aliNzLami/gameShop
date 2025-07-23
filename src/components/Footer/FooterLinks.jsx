@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 function FooterLinks({ list, isItRoute, title }) {
     return (
@@ -15,7 +15,7 @@ function FooterLinks({ list, isItRoute, title }) {
 
                         list.map(item => {
                             return (
-                                <li className='my-1' key={item.name}>
+                                <li className='my-1' key={Math.random()}>
                                     <Link to={item.url}>
                                         { item.name }
                                     </Link> 
@@ -27,7 +27,7 @@ function FooterLinks({ list, isItRoute, title }) {
 
                         list.map(item => {
                             return (
-                                <li key={item.name}> 
+                                <li key={Math.random()}> 
                                     { item.name }
                                 </li>
                             )

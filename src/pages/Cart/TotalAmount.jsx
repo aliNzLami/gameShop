@@ -12,8 +12,8 @@ function TotalAmount( { navigateTitle, onClickBtn = () => {} } ) {
 
 
     // ----------------------------------- Context ----------------------------------- //
-    const { currencies, delivery_fee } = useContext(ShopContext);
-    const { inCartItems } = useContext(InCartContext);
+    const { currencies, delivery_fee } = useContext(ShopContext) || {};
+    const { inCartItems } = useContext(InCartContext) || {};
 
 
     // ----------------------------------- State ----------------------------------- //
@@ -36,7 +36,7 @@ function TotalAmount( { navigateTitle, onClickBtn = () => {} } ) {
 
     // ----------------------------------- Function ----------------------------------- //
     const calculateTotal = () => {
-        if(inCartItems.length && inCartItems) {
+        if(inCartItems && inCartItems.length) {
             let sum = 0;
             for(let item of inCartItems) {
                 sum += Number(item.number) * Number(item.product.price)
@@ -91,7 +91,7 @@ function TotalAmount( { navigateTitle, onClickBtn = () => {} } ) {
                 inCartItems && inCartItems.length
                 ?
                     <div className="w-full text-end">
-                        <button onClick={onClickBtn} className='py-3 px-8 my-8 text-sm text-white cursor-pointer mainPurpleBg'>
+                        <button onClick={onClickBtn} className='py-3 px-8 my-8 text-sm text-white cursor-pointer mainPurpleBg' data-testid='proceedBtn'>
                             { navigateTitle }
                         </button>
                     </div>

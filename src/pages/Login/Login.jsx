@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 // helper
 import { emailValidity } from '../../assets/helper/emailValidity';
@@ -19,7 +19,7 @@ function Login() {
 
     // ------------------------ Context ----------------------- //
     const routesList = useContext(RouteContext);
-    const { updateProfile } = useContext(ProfileContext);
+    const { updateProfile } = useContext(ProfileContext) || {};
     
     
     // ------------------------ Content ----------------------- //
@@ -122,9 +122,9 @@ function Login() {
       <>
         <div className='flex flex-col justify-center items-center w-[90%] sm:max-w-96 m-auto gap-4 text-gray-800 minH500'>
           <div className='inline-flex items-center gap-2 mb-2'>
-            <p className='prata-font text-3xl'>
+            <h1 className='prata-font text-3xl' data-testid='loginHeader'>
               { currentState.signUp.active ? currentState.signUp.name : currentState.login.name  }
-            </p>
+            </h1>
             <hr className='border-none h-[1.5px] w-8 bg-gray-800' />
           </div>
 
@@ -146,11 +146,11 @@ function Login() {
                     )
                   })
                 }
-                <button onClick={signHandler} className='mainPurpleBg text-white cursor-pointer px-4 py-2 rounded'>
+                <button onClick={signHandler} className='mainPurpleBg text-white cursor-pointer px-4 py-2 rounded' data-testid='signUpBtn_color'>
                   { currentState.signUp.name }
                 </button>
 
-                <p onClick={() => toggleHandler("login")} className='text-md text-gray-700 cursor-pointer mt-4'>
+                <p onClick={() => toggleHandler("login")} className='text-md text-gray-700 cursor-pointer mt-4' data-testid='loginBtn_transparent'>
                   { currentState.login.name }
                 </p>
               </>
@@ -172,11 +172,11 @@ function Login() {
                   })
                 }
 
-                <button onClick={signHandler} className='mainPurpleBg text-white cursor-pointer px-4 py-2 rounded'>
+                <button onClick={signHandler} className='mainPurpleBg text-white cursor-pointer px-4 py-2 rounded' data-testid='loginBtn_color'>
                   { currentState.login.name }
                 </button>
 
-                <p onClick={() => toggleHandler("signUp")} className='text-md text-gray-700 cursor-pointer mt-4'>
+                <p onClick={() => toggleHandler("signUp")} className='text-md text-gray-700 cursor-pointer mt-4' data-testid='signUpBtn_transparent'>
                   { currentState.signUp.name }
                 </p>
               </>

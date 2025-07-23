@@ -9,13 +9,11 @@ import Container from '../Container';
 
 function Footer() {
 
-    const routesList = useContext(RouteContext);
+    const routesList = useContext(RouteContext) || {};
 
     const footerLinks = [
-        routesList.home,
-        routesList.about,
-        // routesList.delivery,
-        // routesList.pp,
+        routesList?.home??"",
+        routesList?.about??"",
     ]
 
     const footerContacts = [
@@ -36,7 +34,7 @@ function Footer() {
                         </p>
                     </div>
 
-                    <nav>
+                    <nav data-testid='footerNav'>
                         <FooterLinks 
                             title={"SHOP"}
                             list={footerLinks}
@@ -44,7 +42,7 @@ function Footer() {
                         />
                     </nav>
 
-                    <address>
+                    <address data-testid='footerAddress'>
                         <FooterLinks 
                             title={"GET IN TOUCH"}
                             list={footerContacts}

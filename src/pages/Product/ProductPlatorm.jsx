@@ -30,7 +30,7 @@ function ProductPlatorm({ selectedProduct, setSelectedProduct }) {
     }, [])
     
     return (
-        <div className='flex flex-col gap-4 my-8 productInfoBox'>
+        <div className='flex flex-col gap-4 my-8 productInfoBox' data-testid='platforms'>
             <p>
                 Select Platform:
             </p>

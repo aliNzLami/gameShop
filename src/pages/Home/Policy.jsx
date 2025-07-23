@@ -32,7 +32,7 @@ function Policy() {
                 
                 {
                     policies.map(item => 
-                        <div key={item.title} className={`${item.animation}`}>
+                        <div key={item.title} className={`${item.animation} policyItem`}>
                             <img className='w-12 m-auto mb-3' src={item.img} />
                             <p className='font-semibold mainPurpleText'>
                                 { item.title }

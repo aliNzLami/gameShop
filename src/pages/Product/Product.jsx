@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router'
 import { ShopContext } from "../../assets/context/ShopContext";
-import { InCartContext } from "../../assets/context/InCartContext";
 
 // components
 import Loading from "../../components/Loading";
@@ -17,7 +16,7 @@ function Product() {
   const { productId } = useParams();
 
   // -------------------------- Context -------------------------- //
-  const { products, currencies } = useContext(ShopContext);
+  const { products, currencies } = useContext(ShopContext) || {};
 
   // -------------------------- State -------------------------- //
   const [selectedProduct, setSelectedProduct] = useState({
@@ -43,7 +42,9 @@ function Product() {
 
   // -------------------------- Effects -------------------------- //
   useEffect(() => {
-    fetchProductData();
+    if(products) {
+      fetchProductData();
+    }
   }, [])
 
   return (

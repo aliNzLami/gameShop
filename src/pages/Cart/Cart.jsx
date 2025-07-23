@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 // context
 import { InCartContext } from '../../assets/context/InCartContext';
@@ -17,9 +17,9 @@ function Cart() {
     const navigate = useNavigate();
 
     // ---------------------------------- Context ---------------------------------- //
-    const { inCartItems } = useContext(InCartContext);
-    const { profile } = useContext(ProfileContext);
-    const routesList = useContext(RouteContext);
+    const { inCartItems } = useContext(InCartContext) || {};
+    const { profile } = useContext(ProfileContext) || {};
+    const routesList = useContext(RouteContext) || {};
 
     // ---------------------------------- Function ---------------------------------- //
     const proceedClick = () => {
@@ -28,7 +28,7 @@ function Cart() {
         }
         else {
             toast.info("First, Login to Your Profile");
-            navigate(routesList.login.url);
+            if(routesList) navigate(routesList.login.url);
         }
     }
 
