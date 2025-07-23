@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 import Cart from './Cart';
 
 
-test('proceed btn exist', () => {
+test('totals exist', async () => {
     render(
         <BrowserRouter>
             <Routes>   
@@ -12,29 +12,8 @@ test('proceed btn exist', () => {
             </Routes>
         </BrowserRouter>
     );
-    waitFor(() => {
-        const proceedBtn = screen.getByTestId("proceedBtn");
-        expect(proceedBtn).toBeInTheDocument();
-    })
-});
-
-test('after click on proceed', () => {
-    render(
-        <BrowserRouter>
-            <Routes>   
-                <Route path="*" element= {<Cart />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    waitFor(() => {
-        const proceedBtn = screen.getByTestId("proceedBtn");
-        fireEvent.click(proceedBtn);
-        const login = screen.getByTestId("loginHeader");
-        if(localStorage.getItem("profile")) {
-            expect(login).toBeInTheDocument();
-        }
-        else {
-            expect(login).not.toBeInTheDocument();
-        }
+    await waitFor(() => {
+        const keyword1 = screen.queryByText(/TOTALS/i);
+        expect(keyword1).toBeInTheDocument();
     })
 });

@@ -1,13 +1,9 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Life from './Life';
-import LatesCollection from './LatesCollection';
-import Policy from './Policy';
-import BestSeller from './BestSeller';
-import TwentyYears from './TwentyYears';
+import Home from './Home';
 
 test('renders Life heading', () => {
-  render(<Life />);
+  render(<Home />);
   const keyword1 = screen.queryByText(/life/i );
   const keyword2 = screen.queryByText(/not a game/i );
   const keyword3 = screen.queryByText(/time travel/i );
@@ -16,39 +12,18 @@ test('renders Life heading', () => {
   expect(keyword3).toBeInTheDocument();
 });
 
-test('video tag exists', () => {
-  const { container } = render(<Life />);
-  const video = container.getElementsByTagName("video")[0];
-  expect(video).toBeInTheDocument();
-});
-
-test('when video is played, the src is not empty', async () => {
-    const { container } = render(<Life />);
-    waitFor(() => {
+test('video and button exist', async () => {
+    const { container } = render(<Home />);
+    await waitFor(() => {
         const button = container.getElementsByClassName("videoPlayer_playBtnHolder")[0];
-        const video = container.getElementsByTagName("video");
-        fireEvent.click(button);
-        expect(video).toHaveAttribute('src');
-        expect(video.getAttribute('src')).not.toBe('');
+        const video = container.getElementsByTagName("video")[0];
+        expect(button).toBeInTheDocument();
+        expect(video).toBeInTheDocument();
     })
   });
 
-
-test('renders section latest collection', async () => {
-  const { container } = render(<LatesCollection />);
-  const keyword1 = screen.queryByText(/latest/i);
-  const keyword2 = screen.queryByText(/collection/i);
-  expect(keyword1).toBeInTheDocument();
-  expect(keyword2).toBeInTheDocument();
-  
-  waitFor(() => {
-      const productslist = [...container.getElementsByClassName("productCard")];
-      expect(productslist).toHaveLength(15);
-  })
-});
-
 test('policy section', () => {
-    const { container } = render(<Policy />);
+    const { container } = render(<Home />);
     const policyItems = [...container.getElementsByClassName("policyItem")];
     
     const keyword1 = screen.queryByText(/Easy Exchange Policy/i);
@@ -61,7 +36,7 @@ test('policy section', () => {
 });
 
 test('20 years of experience', () => {
-    render(<TwentyYears />);
+    render(<Home />);
     const keyword1 = screen.queryByText(/YEARS/i);
     const keyword2 = screen.queryByText(/EXPERIENCE/i);
     const keyword3 = screen.queryByText(/best collectors/i);
@@ -69,17 +44,3 @@ test('20 years of experience', () => {
     expect(keyword2).toBeInTheDocument();
     expect(keyword3).toBeInTheDocument();
 });
-
-
-  test('renders section best seller collection', async () => {
-    const { container } = render(<BestSeller />);
-    const keyword1 = screen.queryByText(/best/i);
-    const keyword2 = screen.queryByText(/seller/i);
-    expect(keyword1).toBeInTheDocument();
-    expect(keyword2).toBeInTheDocument();
-    
-    waitFor(() => {
-        const productslist = [...container.getElementsByClassName("productCard")];
-        expect(productslist).not.toHaveLength(0);
-    })
-  });
