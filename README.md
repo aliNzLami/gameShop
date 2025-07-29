@@ -12,6 +12,7 @@ A modern, responsive shopping web application built with React and TailwindCSS. 
 - 🌐 **React Router DOM** – Client-side routing with dynamic parameters
 - 🎨 **TailwindCSS** – Utility-first CSS framework for sleek styling
 - 🎥 **Video.js** – Video player integration (optional)
+- ✅ **React Testing Library** Some small unit tests
 - 🚀 **GitHub Pages** – Static deployment platform
 
 ---
@@ -32,6 +33,9 @@ A modern, responsive shopping web application built with React and TailwindCSS. 
 
 - **Code Reusability & Performance Optimization**  
   Refactored components ensure minimal repetition and optimized rendering.
+
+- **Tests**
+ Tests are done by React Testing Library, which will be more completed in the future.
 
 ---
 
