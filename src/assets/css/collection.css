@@ -32,3 +32,7 @@
     color: #0000008f;
     font-size: 30px;
 }
+
+.allCollections {
+    width: -webkit-fill-available;
+}

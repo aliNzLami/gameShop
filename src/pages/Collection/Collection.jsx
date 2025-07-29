@@ -338,10 +338,10 @@ function Collection() {
           {
             filteredProduct.length
             ?
-              <div data-testid='allCollectoins'>
+              <div data-testid='allCollectoins' className='allCollections'>
                   <CustomCollection 
                     text1={'ALL'} 
-                    text2={"COLLECTIONS"}
+                    text2={`COLLECTIONS (${filteredProduct.length})`}
                     productList={filteredProduct}
                     marginTop={false}
                   />
