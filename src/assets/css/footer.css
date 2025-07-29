@@ -1,0 +1,26 @@
+/* --------------------------------- Footer --------------------------------- */
+
+@media (max-width: 767px) {
+    .footerLinks {
+        text-align: center;
+    }
+
+    .footerLinks_img {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footerLinks_img img {
+        width: 150px;
+    }
+}
+
+.footerLinks li:hover {
+    transition: 0.3s ease-in-out;
+    color: var(--main-purple);
+}
+
+.footerLine {
+    border-bottom: 2px solid var(--main-gray);
+}

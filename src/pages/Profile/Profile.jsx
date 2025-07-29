@@ -13,7 +13,7 @@ import { toast } from 'react-toastify';
 
 function Profile() {
 
-    const { profile, updateProfile } = useContext(ProfileContext) || {};
+    const { profile, setLocalProfile, updateProfile } = useContext(ProfileContext) || {};
 
     const profileContent = [
       {
@@ -78,7 +78,7 @@ function Profile() {
 
     const [canEdit, setCanEdit] = useState(false);
 
-    const updateProfileFirst = () => {
+    const updateForm = () => {
       const newFormState = {...formState};
       for(let item in profile) {
         newFormState[item] = profile[item];
@@ -116,9 +116,15 @@ function Profile() {
     }
 
     useEffect(() => {
-      updateProfileFirst();
-    }, [])
+      updateForm();
+    }, [profile])
     
+    useEffect(() => {
+      if(setLocalProfile) {
+        setLocalProfile();
+      }
+    }, [])
+
     return (
         <div className='flex flex-col justify-center items-center w-[90%] sm:max-w-96 m-auto gap-4 text-gray-800 minH500'>
           <div className='inline-flex items-center gap-2 mb-2'>
@@ -135,7 +141,7 @@ function Profile() {
                         onChange={(e)=> editHandler({key: item.id, value: e.target.value})}
                         key={item.id}
                         type={item.type ? item.type : "text"}
-                        className='w-full px-3 py-2 mainBorder' 
+                        className={`w-full px-3 py-2 mainBorder ${canEdit ? "canEditInput" : "canNotEditInput"}`} 
                         placeholder={item.placeholder}
                         id={item.id} 
                         disabled={!canEdit}

@@ -42,7 +42,7 @@ function Cart() {
                         ?
                             inCartItems.map((item, index) => {
                                 return (
-                                    <div key={Math.random()}>
+                                    <div key={index}>
                                         <CartItem 
                                             item={item}
                                             index={index}

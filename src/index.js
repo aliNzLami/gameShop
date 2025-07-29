@@ -1,7 +1,17 @@
 import { createRoot } from 'react-dom/client'
-import './App.css'
+import {HashRouter} from "react-router-dom"
 import App from './App.jsx';
-import {BrowserRouter, HashRouter} from "react-router-dom"
+
+// CSS Files
+import './assets/css/general.css';
+import './assets/css/navbar.css';
+import './assets/css/home.css';
+import './assets/css/footer.css';
+import './assets/css/collection.css';
+import './assets/css/product.css';
+import './assets/css/cartOrder.css';
+
+// Context Providers
 import reportWebVitals from './reportWebVitals';
 import ShopContextProvider from './assets/context/ShopContext.jsx';
 import RouteContextProvider from './assets/context/RouteContext.jsx';

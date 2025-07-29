@@ -9,8 +9,8 @@ function BestSeller() {
     const [ bestSellers, setBestSellers ] = useState([]);
 
     useEffect(() => {
-        if(shopData.productList) {
-            const filteredProducts = shopData.productList.filter(item => item.bestSeller);
+        if(shopData.products) {
+            const filteredProducts = shopData.products.filter(item => item.bestSeller);
             setBestSellers(filteredProducts);
         }
     }, [])
