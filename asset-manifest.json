@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gameShop/static/css/main.8bd2d583.css",
-    "main.js": "/gameShop/static/js/main.440888b1.js",
+    "main.css": "/gameShop/static/css/main.d6b34e43.css",
+    "main.js": "/gameShop/static/js/main.13e045cb.js",
     "static/js/453.eceb19e0.chunk.js": "/gameShop/static/js/453.eceb19e0.chunk.js",
     "static/media/watchdogs2.png": "/gameShop/static/media/watchdogs2.3fbc1793b195eb35acd3.png",
     "static/media/tekken8.png": "/gameShop/static/media/tekken8.a43971db854273490789.png",
@@ -60,12 +60,12 @@
     "static/media/squareEnix.png": "/gameShop/static/media/squareEnix.9db030becb5ec336f953.png",
     "static/media/profile.svg": "/gameShop/static/media/profile.7a271b24f0b65e0e672cfa589f169b6d.svg",
     "index.html": "/gameShop/index.html",
-    "main.8bd2d583.css.map": "/gameShop/static/css/main.8bd2d583.css.map",
-    "main.440888b1.js.map": "/gameShop/static/js/main.440888b1.js.map",
+    "main.d6b34e43.css.map": "/gameShop/static/css/main.d6b34e43.css.map",
+    "main.13e045cb.js.map": "/gameShop/static/js/main.13e045cb.js.map",
     "453.eceb19e0.chunk.js.map": "/gameShop/static/js/453.eceb19e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8bd2d583.css",
-    "static/js/main.440888b1.js"
+    "static/css/main.d6b34e43.css",
+    "static/js/main.13e045cb.js"
   ]
 }
