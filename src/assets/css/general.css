@@ -111,6 +111,11 @@ address * {
   color: rgba(0, 0, 0, 0.474);
 }
 
+.react-multiple-carousel__arrow--right, .react-multiple-carousel__arrow--left {
+  background-color: var(--main-purple);
+  box-shadow: 1px 1px 1px 1px #000;
+}
+
   /* --------------------------------- Animations --------------------------------- */
 
 

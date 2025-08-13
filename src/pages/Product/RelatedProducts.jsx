@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 
 // context
 import { ShopContext } from "../../assets/context/ShopContext"
-import CustomCollection from '../../components/Collection/CustomCollection';
+import HeaderCollection from '../../components/Collection/HeaderCollection';
+import CustomeCarousel from '../../components/CustomeCarousel';
 
 function RelatedProducts({ selectedProduct }) {
 
@@ -26,20 +27,26 @@ function RelatedProducts({ selectedProduct }) {
     }, [])
 
     return (
-        <>
+        <section className='mt-30'>
             {
                 relatedProducts.length 
                 ?
-                    <CustomCollection 
-                        text1={"More of"}
-                        text2={selectedProduct.productData.company[0].name}
-                        productList={relatedProducts}
-                    />
+                    <>
+                        <HeaderCollection 
+                            text1={"More of"}
+                            text2={selectedProduct.productData.company[0].name}
+                        />
+
+                        <CustomeCarousel
+                            list={relatedProducts}
+                        />
+                    </>
+
 
                 :
                     ""
             }
-        </>
+        </section>
     )
 }
 

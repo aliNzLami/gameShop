@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { ShopContext } from "../../assets/context/ShopContext"
-import CustomCollection from '../../components/Collection/CustomCollection';
-
+import CustomeCarousel from '../../components/CustomeCarousel';
+import HeaderCollection from '../../components/Collection/HeaderCollection';
 
 function BestSeller() {
 
@@ -17,11 +17,20 @@ function BestSeller() {
 
     return (
         <section className='mb-10'>
-            <CustomCollection
+
+            <HeaderCollection 
+                text1={'BEST'} 
+                text2={"SELLERS"}
+            />
+            <CustomeCarousel
+                list={bestSellers}
+            />
+
+            {/* <CustomCollection
                 text1={'BEST'} 
                 text2={"SELLERS"}
                 productList={bestSellers}
-            />
+            /> */}
         </section>
     )
 }
