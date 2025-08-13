@@ -255,7 +255,6 @@ function Collection() {
 
     const searchHandler = () => {
       const newProducts = [];
-      const oldProducts = [...filteredProduct];
       if(!searchContent) {
         applyFilters();
       }
@@ -281,7 +280,7 @@ function Collection() {
     useEffect(() => {
       searchHandler();
     }, [searchContent])
-    
+
     
     return (
       <Container>
