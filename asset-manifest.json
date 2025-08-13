@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/gameShop/static/css/main.d6b34e43.css",
-    "main.js": "/gameShop/static/js/main.13e045cb.js",
+    "main.css": "/gameShop/static/css/main.de5c6f50.css",
+    "main.js": "/gameShop/static/js/main.979ef06d.js",
     "static/js/453.eceb19e0.chunk.js": "/gameShop/static/js/453.eceb19e0.chunk.js",
-    "static/media/watchdogs2.png": "/gameShop/static/media/watchdogs2.3fbc1793b195eb35acd3.png",
-    "static/media/tekken8.png": "/gameShop/static/media/tekken8.a43971db854273490789.png",
+    "static/media/watchdogs2.png": "/gameShop/static/media/watchdogs2.1097589651a7c59501cb.png",
     "static/media/alanwake2.jpg": "/gameShop/static/media/alanwake2.7e68969cda0d672ed9e8.jpg",
     "static/media/life2.mp4": "/gameShop/static/media/life2.3f55dd84d02bd930887a.mp4",
+    "static/media/tekken8.png": "/gameShop/static/media/tekken8.9a11ddd460ebf6e84b7c.png",
     "static/media/lifeisstrange.jpg": "/gameShop/static/media/lifeisstrange.eb9df50d85679bf45359.jpg",
     "static/media/tekken6.jpg": "/gameShop/static/media/tekken6.7672acc1910042d14d9c.jpg",
     "static/media/assassinbf.jpg": "/gameShop/static/media/assassinbf.cad66eaf7ccbb60e77a5.jpg",
@@ -57,15 +57,18 @@
     "static/media/uk.png": "/gameShop/static/media/uk.2e8a1a5c51975ea93bc7.png",
     "static/media/remedy.png": "/gameShop/static/media/remedy.d560fbc9423c1cf813f8.png",
     "static/media/star.jpg": "/gameShop/static/media/star.6347ae3a630a307a3713.jpg",
+    "static/media/revicons.eot": "/gameShop/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/gameShop/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/squareEnix.png": "/gameShop/static/media/squareEnix.9db030becb5ec336f953.png",
+    "static/media/revicons.woff": "/gameShop/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/profile.svg": "/gameShop/static/media/profile.7a271b24f0b65e0e672cfa589f169b6d.svg",
     "index.html": "/gameShop/index.html",
-    "main.d6b34e43.css.map": "/gameShop/static/css/main.d6b34e43.css.map",
-    "main.13e045cb.js.map": "/gameShop/static/js/main.13e045cb.js.map",
+    "main.de5c6f50.css.map": "/gameShop/static/css/main.de5c6f50.css.map",
+    "main.979ef06d.js.map": "/gameShop/static/js/main.979ef06d.js.map",
     "453.eceb19e0.chunk.js.map": "/gameShop/static/js/453.eceb19e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6b34e43.css",
-    "static/js/main.13e045cb.js"
+    "static/css/main.de5c6f50.css",
+    "static/js/main.979ef06d.js"
   ]
 }
