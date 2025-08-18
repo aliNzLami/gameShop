@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 // context
@@ -20,6 +20,9 @@ function Cart() {
     const { inCartItems } = useContext(InCartContext) || {};
     const { profile } = useContext(ProfileContext) || {};
     const routesList = useContext(RouteContext) || {};
+
+    // ---------------------------------- Context ---------------------------------- //
+    const [isValid, setIsValid] = useState(false);
 
     // ---------------------------------- Function ---------------------------------- //
     const proceedClick = () => {
@@ -46,6 +49,7 @@ function Cart() {
                                         <CartItem 
                                             item={item}
                                             index={index}
+                                            setIsValid={setIsValid}
                                         />
                                     </div>
                                 )
@@ -61,6 +65,7 @@ function Cart() {
                             <TotalAmount 
                                 navigateTitle={"PROCEED TO CHECKOUT"}
                                 onClickBtn={proceedClick}
+                                isValid={isValid}
                             />
                         </div>
                     </div>

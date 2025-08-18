@@ -8,7 +8,7 @@ import { InCartContext } from '../../assets/context/InCartContext';
 import Title from '../../components/Collection/Title';
 
 
-function TotalAmount( { navigateTitle, onClickBtn = () => {} } ) {
+function TotalAmount( { navigateTitle, isValid, onClickBtn = () => {} } ) {
 
 
     // ----------------------------------- Context ----------------------------------- //
@@ -91,7 +91,12 @@ function TotalAmount( { navigateTitle, onClickBtn = () => {} } ) {
                 inCartItems && inCartItems.length
                 ?
                     <div className="w-full text-end">
-                        <button onClick={onClickBtn} className='py-3 px-8 my-8 text-sm text-white cursor-pointer mainPurpleBg' data-testid='proceedBtn'>
+                        <button 
+                            onClick={onClickBtn} 
+                            className={`py-3 px-8 my-8 text-sm text-white cursor-pointer mainPurpleBg ${isValid ? "" : "opacity-[0.5]"}`}
+                            data-testid='proceedBtn'
+                            disabled={!isValid}
+                        >
                             { navigateTitle }
                         </button>
                     </div>

@@ -18,7 +18,7 @@ import { toast } from 'react-toastify';
 
 
 
-function CartItem( { item, index } ) {
+function CartItem( { item, index, setIsValid } ) {
 
     // ----------------------------------- Context ----------------------------------- //
     const routesList = useContext(RouteContext) || {};
@@ -46,6 +46,7 @@ function CartItem( { item, index } ) {
         else {
             updateNumbers(Number(input.target.value));
         }
+        setIsValid(isValid.status);
     }
 
     const updateNumbers = (input) => {

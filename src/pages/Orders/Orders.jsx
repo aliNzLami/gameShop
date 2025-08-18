@@ -126,6 +126,7 @@ function Orders() {
             <TotalAmount 
               navigateTitle={"PROCEED TO PAYMENT"}
               onClickBtn={updateOrders}
+              isValid={true}
             />
           </div>
         </div>
