@@ -102,16 +102,13 @@ function Collection() {
     }
 
     const onChangeToggleHandler = (value) => {
-      const newFilters = {...filters};
-
       if(value.name === "Best Seller") {
-        newFilters.bestSeller = value.checked ? true : null;
+        setFilters(prev => ({ ...prev, bestSeller: value.checked ? true : null }))
+
       }
       if(value.name === "Latest") {
-        newFilters.latest = value.checked;
+        setFilters(prev => ({ ...prev, latest: value.checked }))
       }
-
-      setFilters({...newFilters});
     }
 
     const applyFilters = () => {

@@ -64,10 +64,10 @@ function About() {
                 whyUs.map((item, index) => {
                   return (
                     <div key={index} className="whyChooseUsBox mainBorder px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-6">
-                      <p className='font-bold'>
+                      <p className='font-bold text-18'>
                         { item.title }
                       </p>
-                      <p className='text-gray-600'>
+                      <p className='text-gray-600 text-16'>
                         { item.paragraph }
                       </p>
                     </div>

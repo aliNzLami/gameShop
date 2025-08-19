@@ -34,10 +34,10 @@ function Policy() {
                     policies.map(item => 
                         <div key={item.title} className={`${item.animation} policyItem`}>
                             <img className='w-12 m-auto mb-3' src={item.img} />
-                            <p className='font-semibold mainPurpleText'>
+                            <p className='font-semibold mainPurpleText text-18'>
                                 { item.title }
                             </p>
-                            <p className='text-gray-400'>
+                            <p className='text-gray-400 text-16'>
                                 { item.description }
                             </p>
                         </div>

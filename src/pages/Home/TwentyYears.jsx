@@ -12,10 +12,10 @@ function TwentyYears() {
                 </div>
                 
                 <div className='experiences'>
-                    <div className="text-3xl mainPurpleText">
+                    <div className="text-3xl mainPurpleText text-center md:text-start">
                         YEARS of EXPERIENCE
                     </div>
-                    <div className="mt-2 text-xs sm:text-sm md:text-base text-gray-400">
+                    <div className="mt-2 text-18 sm:text-16 md:text-base text-gray-400 text-center md:text-start">
                         We provide the best gaming collections for the best collectors
                     </div>
                 </div>

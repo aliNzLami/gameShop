@@ -17,7 +17,7 @@ function FilterCollections({ title, list, showFilter, onChange }) {
                             <p key={item[0]} className='flex items-center flex-gap-2 my-4'>
                                 <input className='w-3' type="checkbox" value={item[0]} id={item[0]} onChange={(value) => onChange({ name: value.target.id , checked: value.target.checked })}/>
                                 <label htmlFor={item[0]} className='block w-full flex items-center'>
-                                    <span className='mx-4'> { item[0].toUpperCase() } </span>
+                                    <span className='mx-4 text-14'> { item[0].toUpperCase() } </span>
                                     {
                                         item[1] &&
                                         <img src={item[1]} alt="" className='filterIcons' /> 

@@ -39,12 +39,12 @@ function CartItem( { item, index, setIsValid } ) {
     }
 
     const changeNumber = (input) => {
-        const isValid = numberValidity(input.target.value, item.product.availabe);
+        const isValid = numberValidity(input, item.product.availabe);
         if(!isValid.status) {
             toast.error(isValid.text);
         }
         else {
-            updateNumbers(Number(input.target.value));
+            updateNumbers(Number(input));
         }
         setIsValid(isValid.status);
     }
@@ -54,6 +54,11 @@ function CartItem( { item, index, setIsValid } ) {
         newList[index].number = input;
         updateInCart(newList);
     }
+
+    useEffect(() => {
+        changeNumber(item.number)
+    }, [])
+    
 
 
     return (
@@ -83,15 +88,15 @@ function CartItem( { item, index, setIsValid } ) {
                     </div>
                     <div className='cartItem_infoHolder_mobile'>
                     <Link to={routesList.product.url.replace(':productId', item.product._id)}>
-                        <p className='text-xs sm:text-lg font-medium'>
+                        <p className='text-18 sm:text-lg font-medium'>
                                 { item.product.name }
                         </p>
                     </Link>
                         <div className='cartItem_infoBoxHolder_mobile flex items-center gap-5 mt-4'>
-                            <p className='font-bold cartItem_price_mobile'>
+                            <p className='font-bold cartItem_price_mobile text-18'>
                                 {`${currencies.uk.sign} ${item.product.price}`}
                             </p>
-                            <p className='px-2 sm:px-3 sm:py-2 mainBorder bg-slate-50 flex cartItem_platformBox_mobile'>
+                            <p className='px-2 sm:px-3 sm:py-2 mainBorder bg-slate-50 flex cartItem_platformBox_mobile text-16'>
                                 <span>
                                     { item.platform.name }
                                 </span>
@@ -100,7 +105,7 @@ function CartItem( { item, index, setIsValid } ) {
                         </div>
                     </div>
                 </div>
-                <input onChange={changeNumber} className='mainBorder cartItem_input_mobile md:max-w-20 px-1 sm:px-2 py-1' type="number" defaultValue={item.number} />
+                <input onChange={(e) => changeNumber(e.target.value)} className='mainBorder cartItem_input_mobile md:max-w-20 px-1 sm:px-2 py-1' type="number" defaultValue={item.number} />
                 <img  onClick={() => setModal(true)} className='cartItem_removeBtn_mobile w-4 mr-4 sm:w-5 cursor-pointer' src={trash} />
             </div>
         </>

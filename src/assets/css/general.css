@@ -207,3 +207,15 @@ address * {
       transform: translateY(0);
     }
 }
+
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    width: 100% !important;
+    top: 20px;
+  }
+
+  .Toastify__toast {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+}

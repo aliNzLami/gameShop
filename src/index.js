@@ -4,6 +4,7 @@ import App from './App.jsx';
 
 // CSS Files
 import './assets/css/general.css';
+import './assets/css/font.css';
 import './assets/css/navbar.css';
 import './assets/css/home.css';
 import './assets/css/footer.css';

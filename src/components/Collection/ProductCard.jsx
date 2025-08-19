@@ -28,10 +28,10 @@ function ProductCard({productItem, currencies}) {
                         <img className='hover:scale-110 transition ease-in-out' src={productItem.pic} />
                     </div>
                 </div>
-                <p className='pt-3 pb-1 text-sm productCardName'>
+                <p className='pt-3 pb-1 text-16 productCardName'>
                     { productItem.name }
                 </p>
-                <p className='text-sm font-medium'>
+                <p className='text-16 font-medium'>
                     <span>
                         { currencies.uk.sign }
                     </span>

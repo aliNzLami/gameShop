@@ -13,7 +13,7 @@ function CustomCollection({ text1, text2, description = "Lorem ipsum dolor sit a
                 <div className='text-center text-3xl'>
                     <Title text1={text1} text2={text2} />
                 </div>
-                <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-400 text-center mb-15'>
+                <p className='w-3/4 m-auto text-18 sm:text-sm md:text-base text-gray-400 text-center mb-15'>
                     { description }
                 </p>
             </div>

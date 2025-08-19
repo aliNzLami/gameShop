@@ -62,7 +62,7 @@ function TotalAmount( { navigateTitle, isValid, onClickBtn = () => {} } ) {
                     content.map((item, index) => {
                         return (
                             <div key={index}>
-                                <div className="flex justify-between">
+                                <div className="flex justify-between text-18">
                                     <p className={`${item.name === "Total" && "font-bold"}`}>
                                         { item.name }
                                     </p>
@@ -93,7 +93,7 @@ function TotalAmount( { navigateTitle, isValid, onClickBtn = () => {} } ) {
                     <div className="w-full text-end">
                         <button 
                             onClick={onClickBtn} 
-                            className={`py-3 px-8 my-8 text-sm text-white cursor-pointer mainPurpleBg ${isValid ? "" : "opacity-[0.5]"}`}
+                            className={`py-3 px-8 my-8 text-sm text-white cursor-pointer mainPurpleBg text-16 ${isValid ? "" : "opacity-[0.5]"}`}
                             data-testid='proceedBtn'
                             disabled={!isValid}
                         >

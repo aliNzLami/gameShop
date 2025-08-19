@@ -35,7 +35,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className="my-10 flex flex-col justify-center md:flex-row gap-10 mb-28">
+            <div className="my-10 flex flex-col justify-center items-center md:flex-row gap-10 mb-28">
               <img className='w-full md:max-w-[500px] showSmoothly' src={contact} />
 
               <address>
@@ -45,7 +45,7 @@ function Contact() {
                       // item[0] = key
                       // item[1] = value
                       return(
-                          <p key={index} className={item[0] === "title" ? "font-semibol text-xl text-gray-800" : "text-gray-400"}>
+                          <p key={index} className={item[0] === "title" ? "font-semibol text-20 text-gray-800" : "text-gray-400 text-16"}>
                             {
                               item[0] === "title"
                               ?
@@ -63,7 +63,7 @@ function Contact() {
                       // item[0] = key
                       // item[1] = value
                       return(
-                          <p key={index} className={item[0] === "title" ? "font-semibol text-xl text-gray-800" : "text-gray-400"}>
+                          <p key={index} className={item[0] === "title" ? "font-semibol text-20 text-gray-800" : "text-gray-400 text-16"}>
                             {
                               item[0] !== "btn"
                               ?
