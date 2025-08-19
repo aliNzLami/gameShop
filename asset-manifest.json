@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gameShop/static/css/main.de5c6f50.css",
-    "main.js": "/gameShop/static/js/main.43f8e62a.js",
+    "main.css": "/gameShop/static/css/main.2b46d69f.css",
+    "main.js": "/gameShop/static/js/main.21b46fa4.js",
     "static/js/453.eceb19e0.chunk.js": "/gameShop/static/js/453.eceb19e0.chunk.js",
     "static/media/watchdogs2.png": "/gameShop/static/media/watchdogs2.1097589651a7c59501cb.png",
     "static/media/alanwake2.jpg": "/gameShop/static/media/alanwake2.7e68969cda0d672ed9e8.jpg",
@@ -63,12 +63,12 @@
     "static/media/revicons.woff": "/gameShop/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/profile.svg": "/gameShop/static/media/profile.7a271b24f0b65e0e672cfa589f169b6d.svg",
     "index.html": "/gameShop/index.html",
-    "main.de5c6f50.css.map": "/gameShop/static/css/main.de5c6f50.css.map",
-    "main.43f8e62a.js.map": "/gameShop/static/js/main.43f8e62a.js.map",
+    "main.2b46d69f.css.map": "/gameShop/static/css/main.2b46d69f.css.map",
+    "main.21b46fa4.js.map": "/gameShop/static/js/main.21b46fa4.js.map",
     "453.eceb19e0.chunk.js.map": "/gameShop/static/js/453.eceb19e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de5c6f50.css",
-    "static/js/main.43f8e62a.js"
+    "static/css/main.2b46d69f.css",
+    "static/js/main.21b46fa4.js"
   ]
 }
