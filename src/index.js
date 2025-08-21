@@ -7,6 +7,7 @@ import './assets/css/general.css';
 import './assets/css/font.css';
 import './assets/css/navbar.css';
 import './assets/css/home.css';
+import './assets/css/parallax.css';
 import './assets/css/footer.css';
 import './assets/css/collection.css';
 import './assets/css/product.css';

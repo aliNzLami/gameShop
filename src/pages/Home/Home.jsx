@@ -6,6 +6,8 @@ import Policy from './Policy'
 import Subscribe from '../../components/Subscribe'
 import TwentyYears from './TwentyYears'
 import Container from '../../components/Container'
+import ComplexParallax from './ComplexParallax'
+import Parallax from './Parallax'
 
 
 function Home() {
@@ -16,8 +18,17 @@ function Home() {
         <LatesCollection />
         <Policy />
         <TwentyYears />
-        <BestSeller />
       </Container>
+
+      <Parallax />
+      <ComplexParallax />
+
+      <Container>
+        <div className="mt-20">
+          <BestSeller />
+        </div>
+      </Container>
+      
       <Subscribe />
     </div>
   )
