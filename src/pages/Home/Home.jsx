@@ -16,8 +16,8 @@ function Home() {
       <Container>
         <Life />
         <LatesCollection />
-        <Policy />
         <TwentyYears />
+        <Policy />
       </Container>
 
       <Parallax />

@@ -3,7 +3,7 @@ import React from 'react'
 function TwentyYears() {
     return (
         <section>
-            <div className="flex justify-center mt-15 mb-25 showSmoothly_toUp experiences_twenty">
+            <div className="flex justify-center mb-25 showSmoothly_toUp experiences_twenty">
 
                 <div >
                     <span className="twenty me-4 mainPurpleText"> 
