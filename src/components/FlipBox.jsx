@@ -1,25 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-
-/**
- * CurtainSection
- *
- * Usage:
- * <div style={{height: "100vh"}}>some content</div>
- * <div style={{height: "100vh"}}>some content</div>
- * <CurtainSection>Stage content here</CurtainSection>
- * <div style={{height: "100vh"}}>more content</div>
- *
- * The curtain effect is confined to this section (no fixed positioning).
- */
 export default function CurtainSection({
   leftImg,
   rightImg,
   children,
   id = "curtain-section",
   height = "100vh",
-  openDuration = 0.8, // seconds
+  openDuration = 0.3, // seconds
 }) {
   const sectionRef = useRef(null);
 
@@ -41,7 +29,7 @@ export default function CurtainSection({
             setIsOpen(false)
           }
       },
-      { threshold: 0.9 }
+      { threshold: 0.5 }
     );
     observer.observe(el);
   }, [sectionRef.current]);
