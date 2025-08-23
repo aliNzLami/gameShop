@@ -1,5 +1,5 @@
 import React from 'react';
-import pic from "../../assets/pictures/webPics/about.jpg";
+import pic from "../../assets/pictures/webPics/about.webp";
 import Title from "../../components/Collection/Title";
 import Container from "../../components/Container";
 import Subscribe from "../../components/Subscribe";

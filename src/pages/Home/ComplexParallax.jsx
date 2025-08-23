@@ -1,9 +1,9 @@
 import React from 'react';
 
 import FlipBox from '../../components/FlipBox'
-import img1 from '../../assets/pictures/webPics/leftAnime.jpg'
-import img2 from '../../assets/pictures/webPics/rightAnIme.jpg'
-import img3 from '../../assets/pictures/webPics/dsGirl.jpg'
+import img1 from '../../assets/pictures/webPics/leftAnime.webp'
+import img2 from '../../assets/pictures/webPics/rightAnIme.webp'
+import img3 from '../../assets/pictures/webPics/dsGirl.webp'
 
 function ComplexParallax() {
   return (

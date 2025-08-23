@@ -1,72 +1,72 @@
 // -------------------------------------------- TEKKEN 
 
-import tekken1 from './productPics/tekken1.jpg';
-import tekken2 from './productPics/tekken2.jpg';
-import tekken3 from './productPics/tekken3.jpg';
-import tekken4 from './productPics/tekken4.jpg';
-import tekken5 from './productPics/tekken5.jpg';
-import tekken6 from './productPics/tekken6.jpg';
-import tekken7 from './productPics/tekken7.jpg';
-import tekken8 from './productPics/tekken8.png';
+import tekken1 from './productPics/tekken1.webp';
+import tekken2 from './productPics/tekken2.webp';
+import tekken3 from './productPics/tekken3.webp';
+import tekken4 from './productPics/tekken4.webp';
+import tekken5 from './productPics/tekken5.webp';
+import tekken6 from './productPics/tekken6.webp';
+import tekken7 from './productPics/tekken7.webp';
+import tekken8 from './productPics/tekken8.webp';
 
 // -------------------------------------------- SAM LAKE
 
-import maxPayne from "./productPics/maxpayne1.jpg";
-import maxPayne2 from "./productPics/maxpayne2.jpg";
-import alan_Wake from "./productPics/alanWake.jpg";
-import alan_Wake2 from "./productPics/alanwake2.jpg";
-import quantum_Break from "./productPics/quantumbreak.jpg";
-import control from "./productPics/control.jpg";
+import maxPayne from "./productPics/maxpayne1.webp";
+import maxPayne2 from "./productPics/maxpayne2.webp";
+import alan_Wake from "./productPics/alanWake.webp";
+import alan_Wake2 from "./productPics/alanwake2.webp";
+import quantum_Break from "./productPics/quantumbreak.webp";
+import control from "./productPics/control.webp";
 
 // -------------------------------------------- SQUARE ENIX
 
-import life_is_strange from "./productPics/lifeisstrange.jpg";
-import nier_Automata from "./productPics/nierauto.jpg";
-import nier_Replicant from "./productPics/nierrep.jpg";
+import life_is_strange from "./productPics/lifeisstrange.webp";
+import nier_Automata from "./productPics/nierauto.webp";
+import nier_Replicant from "./productPics/nierrep.webp";
 
 // -------------------------------------------- BATMAN
 
-import batman_asylum from './productPics/batmanasylum.jpg';
-import batman_origin from './productPics/batmanorigin.jpg';
-import batman_city from './productPics/batmancity.jpg';
-import batman_knight from './productPics/batmanknight.jpg';
+import batman_asylum from './productPics/batmanasylum.webp';
+import batman_origin from './productPics/batmanorigin.webp';
+import batman_city from './productPics/batmancity.webp';
+import batman_knight from './productPics/batmanknight.webp';
 
 
 // -------------------------------------------- ASSASSIN'S CREED
 
-import assassins2 from './productPics/assasins2.jpg';
-import assassins3 from './productPics/assassin3.jpg';
-import assassins_brotherhood from './productPics/assassinbh.jpg';
-import assassins_black_flag from './productPics/assassinbf.jpg';
-import assassins_syndicate from './productPics/assassinsynd.jpg';
+import assassins2 from './productPics/assasins2.webp';
+import assassins3 from './productPics/assassin3.webp';
+import assassins_brotherhood from './productPics/assassinbh.webp';
+import assassins_black_flag from './productPics/assassinbf.webp';
+import assassins_syndicate from './productPics/assassinsynd.webp';
 
 
 // -------------------------------------------- WATCH DOGS
 
-import watch_dogs from './productPics/waqtchdogs1.jpg';
-import watch_dogs2 from './productPics/watchdogs2.png';
-import watch_dogs3 from './productPics/watchdogs3.jpg';
+import watch_dogs from './productPics/waqtchdogs1.webp';
+import watch_dogs2 from './productPics/watchdogs2.webp';
+import watch_dogs3 from './productPics/watchdogs3.webp';
 
 
 // -------------------------------------------- HARRY POTTER
 
-import harry_potters from './productPics/harrypotters.jpg'
-import harry_potter_lego from "./productPics/harrylego.jpg"
+import harry_potters from './productPics/harrypotters.webp'
+import harry_potter_lego from "./productPics/harrylego.webp"
 
 
 // -------------------------------------------- SONY
 
-import ghost_tsushima from './productPics/ghostofts.jpg';
-import last_of_us from './productPics/lastUs.jpg';
-import last_of_us2 from './productPics/lastUs2.jpg';
-import spiderman from "./productPics/spiderman.jpg"
+import ghost_tsushima from './productPics/ghostofts.webp';
+import last_of_us from './productPics/lastUs.webp';
+import last_of_us2 from './productPics/lastUs2.webp';
+import spiderman from "./productPics/spiderman.webp"
 
 
 // -------------------------------------------- SINGLE GAMES
 
-import cyberpunk from './productPics/cyberpunk.jpg';
-import remember_me from './productPics/rememberme.jpg';
-import prototype from './productPics/prototype.jpg'
+import cyberpunk from './productPics/cyberpunk.webp';
+import remember_me from './productPics/rememberme.webp';
+import prototype from './productPics/prototype.webp'
 
 
 export const productPics = {

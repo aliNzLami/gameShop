@@ -1,8 +1,8 @@
 import React from 'react';
 
-import spidey from '../../assets/pictures/webPics/spidey.jpg';
-import controller from '../../assets/pictures/webPics/controller.jpg';
-import hands from '../../assets/pictures/webPics/hands.jpg';
+import spidey from '../../assets/pictures/webPics/spidey.webp';
+import controller from '../../assets/pictures/webPics/controller.webp';
+import hands from '../../assets/pictures/webPics/hands.webp';
 
 function Parallax() {
 

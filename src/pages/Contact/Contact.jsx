@@ -1,7 +1,7 @@
 import React from 'react';
 
 // img
-import contact from "../../assets/pictures/webPics/contact.jpg";
+import contact from "../../assets/pictures/webPics/contact.webp";
 
 // component
 import Title from "../../components/Collection/Title";
