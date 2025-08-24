@@ -1,14 +1,16 @@
-import { createContext } from "react";
+import React, { createContext } from "react";
+
+// const Home = React.lazy(() => import('../../pages/Home/Home'))
 import Home from '../../pages/Home/Home';
-import Login from "../../pages/Login/Login";
-import About from "../../pages/About/About";
-import Orders from "../../pages/Orders/Orders";
-import OrdersList from "../../pages/Orders/OrdersList";
-import Product from "../../pages/Product/Product";
-import Contact from "../../pages/Contact/Contact";
-import Collection from "../../pages/Collection/Collection";
-import Cart from '../../pages/Cart/Cart';
-import Profile from "../../pages/Profile/Profile";
+const Login = React.lazy(() => import('../../pages/Login/Login'))
+const About = React.lazy(() => import('../../pages/About/About'))
+const Orders = React.lazy(() => import('../../pages/Orders/Orders'))
+const OrdersList = React.lazy(() => import('../../pages/Orders/OrdersList'))
+const Product = React.lazy(() => import('../../pages/Product/Product'))
+const Contact = React.lazy(() => import('../../pages/Contact/Contact'))
+const Collection = React.lazy(() => import('../../pages/Collection/Collection'))
+const Cart = React.lazy(() => import('../../pages/Cart/Cart'))
+const Profile = React.lazy(() => import('../../pages/Profile/Profile'))
 
 export const RouteContext = createContext();
 

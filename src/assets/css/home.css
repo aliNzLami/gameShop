@@ -71,6 +71,7 @@
 .latestProducts_scrolling {
     position: relative;
     overflow: hidden;
+    background-color: white;
 }
 
 .latestProducts_cardsContainer {

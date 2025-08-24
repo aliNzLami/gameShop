@@ -23,44 +23,45 @@ function LatestCollection() {
 
   // ----------------------- FUNCTIONS ----------------------- //
   const prepareScrolling = () => {
-    const cards = gsap.utils.toArray(".latestProducts_card");
-    const sectionWidth = scrollSection.current.clientWidth;
-    const lastCard = cardsContainer.current.lastElementChild;
-    const lastRight = lastCard.offsetLeft + lastCard.offsetWidth ;
-    const totalScroll = lastRight - sectionWidth;
-    
-    const scrollTrack = gsap.to(cardsContainer.current, {
-      x: -totalScroll,
-      ease: "none",
-      scrollTrigger: {
-        trigger: scrollSection.current,
-        start: "top top",
-        end: `+=${totalScroll}`,
-        pin: true,
-        scrub: true,
-        anticipatePin: 1,
-      },
-    });
-    cards.forEach((card) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0.2 },
-        {
-          opacity: 1,
-          scrollTrigger: {
-            trigger: card,
-            start: "left 95%",
-            end: "center 90%",
-            scrub: true,
-            containerAnimation: scrollTrack,
-          },
-        }
-      );
-    });
+  const cards = gsap.utils.toArray(".latestProducts_card");
+  const sectionWidth = scrollSection.current.clientWidth;
+  const lastCard = cardsContainer.current.lastElementChild;
+  const lastRight = lastCard.offsetLeft + lastCard.offsetWidth;
+  const totalScroll = lastRight - sectionWidth;
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+  // انیمیشن حرکت افقی
+  const scrollTrack = gsap.to(cardsContainer.current, {
+    x: -totalScroll,
+    ease: "none",
+    scrollTrigger: {
+      trigger: scrollSection.current,
+      start: "top top",
+      end: `+=${totalScroll}`,
+      pin: true,
+      scrub: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true, // بروزرسانی هنگام تغییر
+    },
+  });
+
+  // انیمیشن‌های داخل کارت‌ها
+  cards.forEach((card) => {
+    gsap.fromTo(
+      card,
+      { opacity: 0.2 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: card,
+          start: "left 95%",
+          end: "center 90%",
+          scrub: true,
+          containerAnimation: scrollTrack,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
+  });
   }
 
   // ----------------------- EFFECTS ----------------------- //
@@ -71,6 +72,7 @@ function LatestCollection() {
   useEffect(() => {
     if (!latestProduct.length) return;
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.getAll().forEach((t) => t.kill());
     prepareScrolling()
   }, [latestProduct]);
 
