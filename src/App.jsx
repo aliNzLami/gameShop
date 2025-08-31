@@ -1,15 +1,19 @@
 import React, { useContext } from 'react';
 import {Routes, Route} from "react-router";
 
-// ---------------- PAGES
+// CONTEXT
 import { RouteContext } from './assets/context/RouteContext';
 
-// ---------------- Components
+// Components
 import { ToastContainer } from 'react-toastify';
 import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/Footer';
 import SearchBar from './components/SearchBar';
 
+// GSAP
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 

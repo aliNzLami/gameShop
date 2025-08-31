@@ -1,17 +1,51 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function TwentyYears() {
+
+    const experienceBoxRef = useRef(null);
+    const numberRef = useRef(null);
+    const descriptionRef = useRef(null);
+
+    useGSAP(() => {
+        if(!experienceBoxRef) return;
+        
+        const tl = gsap.timeline({
+            scrollTrigger: {
+            trigger: experienceBoxRef.current,
+            start: 'top bottom',
+            toggleActions: "play none none reset", 
+            }
+        });
+
+        tl.from(numberRef.current, {
+            y: -100,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power1.in'
+        })
+
+        tl.from(descriptionRef.current, {
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            ease: 'elastic'
+        })
+    }, [])
+
+
     return (
-        <section>
-            <div className="flex justify-center mb-25 showSmoothly_toUp experiences_twenty">
+        <section ref={experienceBoxRef}>
+            <div className="flex justify-center mb-25 showSmoothly_toUp">
 
                 <div >
-                    <span className="twenty me-4 mainPurpleText"> 
+                    <span ref={numberRef} className="twenty me-4 mainPurpleText"> 
                         20
                     </span>
                 </div>
                 
-                <div className='experiences'>
+                <div ref={descriptionRef} className='experiences'>
                     <div className="text-3xl mainPurpleText text-center md:text-start">
                         YEARS of EXPERIENCE
                     </div>

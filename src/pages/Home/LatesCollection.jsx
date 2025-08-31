@@ -1,95 +1,46 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 
+// context
+import { ShopContext } from "../../assets/context/ShopContext";
+
 // gsap
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ShopContext } from "../../assets/context/ShopContext";
 
 // components
 import HeaderCollection from "../../components/Collection/HeaderCollection";
 import ProductCard from "../../components/Collection/ProductCard";
+import CustomeCarousel from "../../components/CustomeCarousel";
 
 function LatestCollection() {
 
-  // ----------------------- CONTEXT ----------------------- //
+  // ----------------------- Context ----------------------- //
   const shopData = useContext(ShopContext) || {};
 
-  // ----------------------- STATES ----------------------- //
+
+  // ----------------------- States ----------------------- //
   const [latestProduct, setLatestProduct] = useState([]);
 
-  // ----------------------- REFS ----------------------- //
+
+  // ----------------------- Ref ----------------------- //
   const cardsContainer = useRef(null);
   const scrollSection = useRef(null);
 
-  // ----------------------- FUNCTIONS ----------------------- //
-  const prepareScrolling = () => {
-  const cards = gsap.utils.toArray(".latestProducts_card");
-  const sectionWidth = scrollSection.current.clientWidth;
-  const lastCard = cardsContainer.current.lastElementChild;
-  const lastRight = lastCard.offsetLeft + lastCard.offsetWidth;
-  const totalScroll = lastRight - sectionWidth;
 
-  // انیمیشن حرکت افقی
-  const scrollTrack = gsap.to(cardsContainer.current, {
-    x: -totalScroll,
-    ease: "none",
-    scrollTrigger: {
-      trigger: scrollSection.current,
-      start: "top top",
-      end: `+=${totalScroll}`,
-      pin: true,
-      scrub: true,
-      anticipatePin: 1,
-      invalidateOnRefresh: true, // بروزرسانی هنگام تغییر
-    },
-  });
-
-  // انیمیشن‌های داخل کارت‌ها
-  cards.forEach((card) => {
-    gsap.fromTo(
-      card,
-      { opacity: 0.2 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: card,
-          start: "left 95%",
-          end: "center 90%",
-          scrub: true,
-          containerAnimation: scrollTrack,
-          invalidateOnRefresh: true,
-        },
-      }
-    );
-  });
-  }
-
-  // ----------------------- EFFECTS ----------------------- //
+  // ----------------------- Effects ----------------------- //
   useEffect(() => {
     if (shopData.products) setLatestProduct(shopData.products.slice(0, 15));
   }, [shopData.products]);
 
-  useEffect(() => {
-    if (!latestProduct.length) return;
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.getAll().forEach((t) => t.kill());
-    prepareScrolling()
-  }, [latestProduct]);
+
 
   return (
     <section className="mt-10">
-      <div className="latestProducts_scrolling pt-15" ref={scrollSection}>
-      <HeaderCollection text1={"LATEST"} text2={"COLLECTIONS"} />
-        <div className="latestProducts_cardsContainer" ref={cardsContainer}>
-          {latestProduct.map((item) => (
-            <div className="latestProducts_card" key={item._id}>
-              <ProductCard
-                productItem={item}
-                currencies={shopData.currencies}
-              />
-            </div>
-          ))}
-        </div>
+      <div className="latestProducts_scrolling pt-15">
+        <HeaderCollection text1={"LATEST"} text2={"COLLECTIONS"} />
+        <CustomeCarousel
+            list={latestProduct}
+          />
       </div>
     </section>
   );

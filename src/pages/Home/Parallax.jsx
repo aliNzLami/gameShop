@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import spidey from '../../assets/pictures/webPics/spidey.webp';
 import controller from '../../assets/pictures/webPics/controller.webp';
 import hands from '../../assets/pictures/webPics/hands.webp';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function Parallax() {
+
+    const slideRef = useRef([]);
 
     const content = [
       {
@@ -24,15 +28,34 @@ function Parallax() {
       },
     ]
 
+    useGSAP(() => {
+      if(slideRef.current.length !== content.length) return;
+
+      const tl = gsap.timeline({
+          scrollTrigger: {
+          trigger: slideRef.current,
+          start: 'top bottom',
+          toggleActions: "play none none reset", 
+          }
+      });
+
+      slideRef.current.forEach(element => {
+        tl.from(element, {
+          opacity: 0,
+          duration: 1,
+        })
+      })
+    }, [])
+
     return (
       <div>
         {
-          content.map(item => {
+          content.map((item, index) => {
             return(
               <div key={item.title} className="slide">
                   <div className="slide-bg" style={{backgroundImage: `url(${item.img})`}}></div>
                   <div className="slide-overlay"></div>
-                  <div className="slide-content">
+                  <div ref={(element) => slideRef.current[index] = element } className="slide-content">
                       <h1 className="slide-title">{item.title}</h1>
                       <p className="slide-subtitle">{item.description}</p>
                   </div>
