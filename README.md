@@ -11,6 +11,7 @@ A modern, responsive shopping web application built with React and TailwindCSS. 
 - 📦 **Webpack** – Custom bundler configuration
 - 🌐 **React Router DOM** – Client-side routing with dynamic parameters
 - 🎨 **TailwindCSS** – Utility-first CSS framework for sleek styling
+- 🖼️ **GSAP** Smooth Animations via GSAP
 - 🎥 **Video.js** – Video player integration (optional)
 - ✅ **React Testing Library** Some small unit tests
 - 🚀 **GitHub Pages** – Static deployment platform
@@ -30,6 +31,9 @@ A modern, responsive shopping web application built with React and TailwindCSS. 
 
 - **Responsive Design**  
   Mobile-friendly and adaptive layout powered by `TailwindCSS`.
+
+  - **Animations**  
+  User-friendly and enjoyable animations via `GSAP`.
 
 - **Code Reusability & Performance Optimization**  
   Refactored components ensure minimal repetition and optimized rendering.

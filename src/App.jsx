@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {Routes, Route} from "react-router";
 
-// CONTEXT
+// Context
 import { RouteContext } from './assets/context/RouteContext';
 
 // Components
