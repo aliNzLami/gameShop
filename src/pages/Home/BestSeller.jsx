@@ -5,7 +5,7 @@ import HeaderCollection from '../../components/Collection/HeaderCollection';
 
 function BestSeller() {
 
-    const shopData = useContext(ShopContext) || {};
+    const shopData = useContext(ShopContext);
     const [ bestSellers, setBestSellers ] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function BestSeller() {
             const filteredProducts = shopData.products.filter(item => item.bestSeller);
             setBestSellers(filteredProducts);
         }
-    }, [])
+    }, [shopData.products])
 
     return (
         <section className='mb-10'>
@@ -25,12 +25,6 @@ function BestSeller() {
             <CustomeCarousel
                 list={bestSellers}
             />
-
-            {/* <CustomCollection
-                text1={'BEST'} 
-                text2={"SELLERS"}
-                productList={bestSellers}
-            /> */}
         </section>
     )
 }

@@ -25,11 +25,15 @@ function ProductCard({productItem, currencies}) {
             <div className='cardLink' onClick={clickHandler}>
                 <div className="overflow-hidden imgRatio productCard_imgHolder">
                     <div>
-                        <img className='hover:scale-110 transition ease-in-out' src={productItem.pic} />
+                        {
+                            productItem?.pic
+                            &&
+                            <img className='hover:scale-110 transition ease-in-out' src={productItem.pic} />
+                        }
                     </div>
                 </div>
                 <p className='pt-3 pb-1 text-16 productCardName'>
-                    { productItem.name }
+                    { productItem?.name??"" }
                 </p>
                 <p className='text-16 font-medium'>
                     <span>

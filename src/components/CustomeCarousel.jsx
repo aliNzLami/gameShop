@@ -6,7 +6,7 @@ import { ShopContext } from "../assets/context/ShopContext"
 import ProductCard from './Collection/ProductCard';
 
 
-function CustomeCarousel({list}) {
+function CustomeCarousel({list, className = ""}) {
 
     const shopData = useContext(ShopContext) || {};
     
@@ -32,12 +32,15 @@ function CustomeCarousel({list}) {
     return (
         <Carousel responsive={responsive}>
             {
-                list.length &&
+                list && list.length
+                ?
                 list.map((item) => 
-                    <div className='mx-3' key={item._id}>
+                    <div className={`mx-3 ${className}`} key={item._id}>
                         <ProductCard productItem={item} currencies={shopData.currencies} />
                     </div>
                 )
+                :
+                <></>
             }
         </Carousel>
     )

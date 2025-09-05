@@ -10,7 +10,7 @@ import CustomeCarousel from "../../components/CustomeCarousel";
 function LatestCollection() {
 
   // ----------------------- Context ----------------------- //
-  const shopData = useContext(ShopContext) || {};
+  const shopData = useContext(ShopContext);
 
 
   // ----------------------- States ----------------------- //
@@ -24,7 +24,7 @@ function LatestCollection() {
 
   // ----------------------- Effects ----------------------- //
   useEffect(() => {
-    if (shopData.products) setLatestProduct(shopData.products.slice(0, 15));
+      if (shopData.products) setLatestProduct(shopData.products.slice(0, 15));
   }, [shopData.products]);
 
 
@@ -33,7 +33,7 @@ function LatestCollection() {
     <section className="mt-10">
       <div className="latestProducts_scrolling pt-15">
         <HeaderCollection text1={"LATEST"} text2={"COLLECTIONS"} />
-        <CustomeCarousel
+          <CustomeCarousel
             list={latestProduct}
           />
       </div>
