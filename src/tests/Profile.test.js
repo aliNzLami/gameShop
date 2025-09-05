@@ -1,37 +1,50 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Profile from '../pages/Profile/Profile';
 
-test('renders Profile heading', () => {
+test('renders Profile heading', async () => {
     render(<Profile />);
-    const heading = screen.queryByText(/profile/i );
-    expect(heading).toBeInTheDocument();
+    await waitFor(() => {
+        const heading = screen.queryByText(/profile/i );
+        expect(heading).toBeInTheDocument();
+    })
 });
 
-test('all inputs exist, and all are disable', () => {
+test('all inputs exist, and all are disable', async () => {
     const { container } = render(<Profile />);
-    const inputs = [...container.getElementsByTagName("input")];
-    
-    expect(inputs).not.toHaveLength(0);
 
-    for(let input of inputs) {
-        expect(input.getAttribute('disabled')).toBe("");
-    }
+    await waitFor(() => {
+        const inputs = [...container.getElementsByTagName("input")];
+        expect(inputs).not.toHaveLength(0);
+    
+        for(let input of inputs) {
+            expect(input.getAttribute('disabled')).toBe("");
+        }
+    })
 });
 
-test('all inputs exist, and all are disable', () => {
+test('click on edit btn: inputs are not disable', async () => {
     const { container } = render(<Profile />);
-    const buttons = [...container.getElementsByTagName("button")];
+
+    await waitFor(() => {
+        const inputs = [...container.getElementsByTagName("input")];
+        const editBtn = screen.getByTestId("editProfile");
     
-    expect(buttons).not.toHaveLength(0);
+        fireEvent.click(editBtn)
+    
+        for(let input of inputs) {
+            expect(input.getAttribute('disabled')).toBe(null);
+        }
+    })
 });
 
-// test('click on edit btn, inputs are not disable', () => {
-//     const { container } = render(<Profile />);
-//     const inputs = [...container.getElementsByTagName("input")];
-//     const editBtn = screen.getByTestId("editProfile");
+test('toggle btn txt', async () => {
+    const { container } = render(<Profile />);
+    await waitFor(() => {
+        const editBtn = screen.getByRole("button");
+        const txt = editBtn.innerHTML;
 
-//     fireEvent.click(editBtn)
-//     for(let input of inputs) {
-//         expect(input.getAttribute('disabled')).toBe(null);
-//     }
-// });
+        fireEvent.click(editBtn);
+
+        expect(editBtn.innerHTML).not.toBe(txt);
+    })
+});
