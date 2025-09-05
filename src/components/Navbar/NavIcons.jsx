@@ -33,7 +33,6 @@ function NavIcons({navLinksList}) {
     const { profile, setLocalProfile, updateProfile } = useContext(ProfileContext) || {}
     const { inCartItems, setLocalItems } = useContext(InCartContext) || {};
     const { updateOrdersList } = useContext(OrdersContext) || {};
-
     const routesList = useContext(RouteContext);
 
     // ---------------------------------- Functions ---------------------------------- //
