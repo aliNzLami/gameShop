@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/gameShop/static/css/main.ea5358a0.css",
-    "main.js": "/gameShop/static/js/main.f856b063.js",
+    "main.css": "/gameShop/static/css/main.3697755d.css",
+    "main.js": "/gameShop/static/js/main.dc2ed148.js",
     "static/js/92.f439f65b.chunk.js": "/gameShop/static/js/92.f439f65b.chunk.js",
     "static/js/534.b2979a47.chunk.js": "/gameShop/static/js/534.b2979a47.chunk.js",
     "static/js/779.f6725767.chunk.js": "/gameShop/static/js/779.f6725767.chunk.js",
     "static/js/761.8e555ba6.chunk.js": "/gameShop/static/js/761.8e555ba6.chunk.js",
     "static/js/163.b0423a31.chunk.js": "/gameShop/static/js/163.b0423a31.chunk.js",
     "static/js/787.b844cead.chunk.js": "/gameShop/static/js/787.b844cead.chunk.js",
-    "static/js/380.1604a7bf.chunk.js": "/gameShop/static/js/380.1604a7bf.chunk.js",
+    "static/js/631.f7a9c1ee.chunk.js": "/gameShop/static/js/631.f7a9c1ee.chunk.js",
     "static/js/352.754152b8.chunk.js": "/gameShop/static/js/352.754152b8.chunk.js",
     "static/js/324.0c96b539.chunk.js": "/gameShop/static/js/324.0c96b539.chunk.js",
     "static/js/453.eceb19e0.chunk.js": "/gameShop/static/js/453.eceb19e0.chunk.js",
@@ -78,21 +78,21 @@
     "static/media/revicons.woff": "/gameShop/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/gameShop/index.html",
     "static/media/profile.svg": "/gameShop/static/media/profile.7a271b24f0b65e0e672cfa589f169b6d.svg",
-    "main.ea5358a0.css.map": "/gameShop/static/css/main.ea5358a0.css.map",
-    "main.f856b063.js.map": "/gameShop/static/js/main.f856b063.js.map",
+    "main.3697755d.css.map": "/gameShop/static/css/main.3697755d.css.map",
+    "main.dc2ed148.js.map": "/gameShop/static/js/main.dc2ed148.js.map",
     "92.f439f65b.chunk.js.map": "/gameShop/static/js/92.f439f65b.chunk.js.map",
     "534.b2979a47.chunk.js.map": "/gameShop/static/js/534.b2979a47.chunk.js.map",
     "779.f6725767.chunk.js.map": "/gameShop/static/js/779.f6725767.chunk.js.map",
     "761.8e555ba6.chunk.js.map": "/gameShop/static/js/761.8e555ba6.chunk.js.map",
     "163.b0423a31.chunk.js.map": "/gameShop/static/js/163.b0423a31.chunk.js.map",
     "787.b844cead.chunk.js.map": "/gameShop/static/js/787.b844cead.chunk.js.map",
-    "380.1604a7bf.chunk.js.map": "/gameShop/static/js/380.1604a7bf.chunk.js.map",
+    "631.f7a9c1ee.chunk.js.map": "/gameShop/static/js/631.f7a9c1ee.chunk.js.map",
     "352.754152b8.chunk.js.map": "/gameShop/static/js/352.754152b8.chunk.js.map",
     "324.0c96b539.chunk.js.map": "/gameShop/static/js/324.0c96b539.chunk.js.map",
     "453.eceb19e0.chunk.js.map": "/gameShop/static/js/453.eceb19e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea5358a0.css",
-    "static/js/main.f856b063.js"
+    "static/css/main.3697755d.css",
+    "static/js/main.dc2ed148.js"
   ]
 }
