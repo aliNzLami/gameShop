@@ -3,13 +3,8 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 // context
 import { ShopContext } from "../../assets/context/ShopContext";
 
-// gsap
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 // components
 import HeaderCollection from "../../components/Collection/HeaderCollection";
-import ProductCard from "../../components/Collection/ProductCard";
 import CustomeCarousel from "../../components/CustomeCarousel";
 
 function LatestCollection() {

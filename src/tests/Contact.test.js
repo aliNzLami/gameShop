@@ -1,6 +1,5 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Contact from './Contact';
+import Contact from '../pages/Contact/Contact';
 
 test('renders Contact Us heading', () => {
   render(<Contact />);
@@ -14,7 +13,6 @@ test('renders an img with a non-empty src attribute', () => {
   expect(img).toHaveAttribute('src');
   expect(img.getAttribute('src')).not.toBe('');
 });
-
 
 test('renders section address', () => {
   const { container } = render(<Contact />);
