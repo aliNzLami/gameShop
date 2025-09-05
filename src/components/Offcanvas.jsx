@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {NavLink, useLocation} from "react-router";
 
 import icon from "../assets/icons/iconPics/offcanvas.png";
-import logo from "../assets/pictures/shopLogo/logo.jpeg";
 
 function Offcanvas({ navLinksList }) {
 

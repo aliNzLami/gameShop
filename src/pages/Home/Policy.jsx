@@ -53,7 +53,7 @@ function Policy() {
                 tl.from(element, {
                     x: element.classList.contains('toRight') ? 100 : -100 ,
                     opacity: 0,
-                    duration: 1,
+                    duration: 0.3,
                     ease: 'elastic'
                 })
             }

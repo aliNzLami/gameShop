@@ -28,7 +28,7 @@ function ProductCard({productItem, currencies}) {
                         {
                             productItem?.pic
                             &&
-                            <img className='hover:scale-110 transition ease-in-out' src={productItem.pic} />
+                            <img className='hover:scale-110 transition ease-in-out rounded-2xl' src={productItem.pic} />
                         }
                     </div>
                 </div>

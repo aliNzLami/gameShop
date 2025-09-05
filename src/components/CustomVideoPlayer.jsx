@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import videojs from "video.js";
 import 'video.js/dist/video-js.css';
 
-const CustomVideoPlayer = ({ src }) => {
+const CustomVideoPlayer = ({ src, isLoaded = () => {} }) => {
   const videoRef = useRef(null);
   const playerRef = useRef(null);
   const containerRef = useRef(null);
@@ -13,7 +13,7 @@ const CustomVideoPlayer = ({ src }) => {
     if (videoRef.current) {
       const player = videojs(videoRef.current, {
         controls: false, 
-        autoplay: false,
+        autoplay: 'autoplay',
         muted: true, 
         sources: [{ src: src, type: 'video/mp4' }]
       });
@@ -62,6 +62,7 @@ const CustomVideoPlayer = ({ src }) => {
         ref={videoRef}
         className='video-js'
         style={{ width: '100%', height: '100%' }}
+        onLoadedData={isLoaded}
       />
 
       {showPlayButton && (

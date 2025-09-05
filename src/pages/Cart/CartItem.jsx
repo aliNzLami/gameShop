@@ -82,7 +82,7 @@ function CartItem( { item, index, setIsValid } ) {
                 </div>
             </Modal>
         
-            <div className='mt-5 px-4 py-4 mainBorder text-gray-700 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4 cartItem_mobile CartItemForTest'>
+            <div className='mt-5 px-4 py-4 mainBorder text-gray-700 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4 cartItem_mobile CartItemForTest shadow-lg'>
                 <div className="flex items-start gap-6 cartItem_imgTitle_mobile">
                     <div className='cartItem_imgHolder_mobile'>
                         <Link className='imgRatio' to={routesList.product.url.replace(':productId', item?.product?._id??"")}>

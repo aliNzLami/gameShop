@@ -52,26 +52,29 @@ function Product() {
       {
         selectedProduct.productData
         ?
-          <Container>
-            <div className='productBox pt-10 transition-opacity ease-in ducration-500 opacity-100 flex'>
-              <div className='productBox_imgBox imgRatio'>
-                <div>
-                  <img className='w-full h-auto' src={selectedProduct.productData.pic} />
+          <>
+            <Container>
+              <div className='productBox pt-10 transition-opacity ease-in ducration-500 opacity-100 flex'>
+                <div className='productBox_imgBox imgRatio'>
+                  <div>
+                    <img className='w-full h-auto' src={selectedProduct.productData.pic} />
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex-1 productBox_DataBox">
-                <ProductInfo currencies={currencies} productData={selectedProduct.productData} />
-                <ProductPlatorm selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} />
-                <AddToCartProduct selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} />
-              </div>
+                <div className="flex-1 productBox_DataBox">
+                  <ProductInfo currencies={currencies} productData={selectedProduct.productData} />
+                  <ProductPlatorm selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} />
+                  <AddToCartProduct selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} />
+                </div>
 
-            </div>
-            <ProductReviews selectedProduct={selectedProduct} />
-            
-            <RelatedProducts selectedProduct={selectedProduct} />
-            
-          </Container>
+              </div>
+              <ProductReviews selectedProduct={selectedProduct} />
+              
+              <RelatedProducts selectedProduct={selectedProduct} />
+              
+            </Container>
+            <div className='w-full footerLine mt-25' />
+          </>
         :
           <div className='flex justify-center items-center minH500'>
             <Loading />

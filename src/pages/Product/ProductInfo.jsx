@@ -18,7 +18,7 @@ function ProductInfo({ currencies, productData }) {
             <p className='mt-5 text-3xl font-medium productInfo_title'>
                 { currencies.uk.sign } { productData.price }
             </p>
-            <p className='mt-5 text-gray-500 md:w-4/5'>
+            <p className='mt-5 text-gray-500 text-16 md:w-4/5'>
                 { productData.description }
             </p>
         </>

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { RouteContext } from '../../assets/context/RouteContext';
 
 // icon
-import logo from "../../assets/pictures/shopLogo/logo.jpeg";
+import logo from "../../assets/pictures/shopLogo/logo.jpg";
 
 // components
 import NavItems from './NavItems';

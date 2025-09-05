@@ -37,7 +37,7 @@ function TwentyYears() {
 
     return (
         <section ref={experienceBoxRef}>
-            <div className="flex justify-center mb-25 showSmoothly_toUp">
+            <div className="flex justify-center mb-25 experiences_twenty ">
 
                 <div >
                     <span ref={numberRef} className="twenty me-4 mainPurpleText"> 

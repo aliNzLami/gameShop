@@ -25,24 +25,18 @@ function ComplexParallax() {
     });
     curtain.to(leftRef.current, {
         xPercent: -100,
-        duration: 1,
+        duration: 0.5,
     })
     curtain.to(rightRef.current, {
       xPercent: 100,
-      duration: 1,
+      duration: 0.5,
     })
-
-    const img = gsap.timeline({
-        scrollTrigger: {
-        trigger: centerRef.current,
-        start: 'center center',
-        toggleActions: "play none none reverse", 
-      }
-    });
-
-    img.to(centerRef.current, {
-      scale: 0.5,
-      duration: 0.3,
+    curtain.fromTo(centerRef.current, {
+      rotationY: 90,
+      transformOrigin: 'center center',
+    }, {
+      rotationY: 0,
+      duration: 1,
     })
   }, [])
 

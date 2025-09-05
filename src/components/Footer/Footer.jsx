@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { RouteContext } from '../../assets/context/RouteContext';
 
-import logo from "../../assets/pictures/shopLogo/logo.jpeg"
+import logo from "../../assets/pictures/shopLogo/logo.jpg"
 import FooterLinks from './FooterLinks';
 import Container from '../Container';
 

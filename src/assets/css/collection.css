@@ -36,3 +36,16 @@
 .allCollections {
     width: -webkit-fill-available;
 }
+
+.descriptionBox {
+    border-radius: 0 10px 10px 10px;
+    border-color: var(--main-purple);
+    border-width: 2px;
+}
+
+.descriptionSubBox {
+    border-width: 2px;
+    border-color: var(--main-purple);
+    border-bottom-color: transparent;
+    border-radius: 0px 10px 0 0;
+}
