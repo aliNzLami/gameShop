@@ -23,7 +23,7 @@ const renderPage = () => {
 }
 
 
-test('renders Contact Us heading', async () => {
+test('renders Collection heading', async () => {
     renderPage()
 
     await waitFor(() => {
