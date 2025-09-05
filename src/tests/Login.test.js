@@ -1,40 +1,50 @@
-// import React, { act } from 'react';
-// import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-// import Login from '../pages/Login/Login';
-// import { BrowserRouter, Route, Routes } from 'react-router';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+
+// context
+import RouteContextProvider from '../assets/context/RouteContext.jsx';
+import ProfileContextProvider from '../assets/context/ProfileContext.jsx';
+
+// component
+import Login from '../pages/Login/Login';
+
+// route
+import { MemoryRouter } from 'react-router';
 
 
-// test('header: login', () => {
-//     act(() => {
-//         render(
-//             <BrowserRouter>
-//                 <Routes>   
-//                     <Route path="*" element= {<Login />}/>
-//                 </Routes>
-//             </BrowserRouter>
-//         );
-//     });
-//     const header = screen.getByTestId ("loginHeader");
-//     expect(header).toBeInTheDocument();
+const renderPage = () => {
+    return render(
+        <MemoryRouter>
+            <RouteContextProvider>
+                <ProfileContextProvider>
+                    <Login />
+                </ProfileContextProvider>
+            </RouteContextProvider>
+        </MemoryRouter>
+    );
+}
+
+
+test('renders header', () => {
+    renderPage();
+    
+    const header = screen.getByTestId ("loginHeader");
+    expect(header).toBeInTheDocument();
+});
+
+
+test('renders inputs and buttons', () => {
+    const { container } = renderPage();
+    
+    const inputs = [...container.getElementsByTagName('input')];
+    const buttons = [...container.getElementsByTagName('button')];
+    
+    expect(inputs).not.toHaveLength(0);
+    expect(buttons).not.toHaveLength(0);
+});
+
+// test('toggle sign in / sign up', () => {
+//     renderPage();
+    
+//     const inputs = screen.getByTestId ("changeSign");
 // });
 
-// test('toggle header between login and sign up', () => {
-//     act(() => {
-//         render(
-//             <BrowserRouter>
-//                 <Routes>   
-//                     <Route path="*" element= {<Login />}/>
-//                 </Routes>
-//             </BrowserRouter>
-//         );
-//     });
-//     const header = screen.getByTestId ("loginHeader");
-
-//     const signUpBtn_transparent = screen.getByTestId ("signUpBtn_transparent");
-//     fireEvent.click(signUpBtn_transparent);
-//     expect(header.innerHTML).toBe("Sign Up");
-     
-//     const loginBtn_transparent = screen.getByTestId ("loginBtn_transparent");
-//     fireEvent.click(loginBtn_transparent);
-//     expect(header.innerHTML).toBe("Login");
-// });

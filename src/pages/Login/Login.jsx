@@ -150,7 +150,7 @@ function Login() {
                   { currentState.signUp.name }
                 </button>
 
-                <p onClick={() => toggleHandler("login")} className='text-md text-gray-700 cursor-pointer mt-4' data-testid='loginBtn_transparent'>
+                <p onClick={() => toggleHandler("login")} className='text-md text-gray-700 cursor-pointer mt-4' data-testid='changeSign'>
                   { currentState.login.name }
                 </p>
               </>
@@ -176,7 +176,7 @@ function Login() {
                   { currentState.login.name }
                 </button>
 
-                <p onClick={() => toggleHandler("signUp")} className='text-md text-gray-700 cursor-pointer mt-4' data-testid='signUpBtn_transparent'>
+                <p onClick={() => toggleHandler("signUp")} className='text-md text-gray-700 cursor-pointer mt-4' data-testid='changeSign'>
                   { currentState.signUp.name }
                 </p>
               </>
