@@ -340,6 +340,7 @@ function Collection() {
                     text2={`COLLECTIONS (${filteredProduct.length})`}
                     productList={filteredProduct}
                     marginTop={false}
+                    infinityScroll={true}
                   />
               </div>
             :

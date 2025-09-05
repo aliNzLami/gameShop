@@ -116,6 +116,33 @@ address * {
   box-shadow: 1px 1px 1px 1px #000;
 }
 
+.infinite-scroll-component {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /* gap-4 */
+  row-gap: 1.5rem; /* gap-y-6 */
+
+  /* Responsive grid columns */
+}
+
+@media (min-width: 640px) { /* sm */
+  .infinite-scroll-component {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) { /* md */
+  .infinite-scroll-component {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) { /* lg */
+  .infinite-scroll-component {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
   /* --------------------------------- Animations --------------------------------- */
 
 
