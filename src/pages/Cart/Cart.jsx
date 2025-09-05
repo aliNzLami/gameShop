@@ -12,7 +12,7 @@ import CartItem from './CartItem';
 import TotalAmount from './TotalAmount';
 import { toast } from 'react-toastify';
 
-function Cart() {
+function Cart({productsForTest = null}) {
 
     const navigate = useNavigate();
 
@@ -21,8 +21,11 @@ function Cart() {
     const { profile } = useContext(ProfileContext) || {};
     const routesList = useContext(RouteContext) || {};
 
-    // ---------------------------------- Context ---------------------------------- //
+    // ---------------------------------- State ---------------------------------- //
     const [isValid, setIsValid] = useState(false);
+
+    // ---------------------------------- Variables ---------------------------------- //
+    const list = productsForTest ? productsForTest : inCartItems;
 
     // ---------------------------------- Function ---------------------------------- //
     const proceedClick = () => {
@@ -35,15 +38,14 @@ function Cart() {
         }
     }
 
-
     return (
         <>
             <Container>
                 <div className="cartItemsHolder flex flex-col justify-between">
                     {
-                        inCartItems && inCartItems.length
+                        list && list.length
                         ?
-                            inCartItems.map((item, index) => {
+                            list.map((item, index) => {
                                 return (
                                     <div key={index}>
                                         <CartItem 

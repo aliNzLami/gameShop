@@ -64,13 +64,13 @@ function TotalAmount( { navigateTitle, isValid, onClickBtn = () => {} } ) {
                             <div key={index}>
                                 <div className="flex justify-between text-18">
                                     <p className={`${item.name === "Total" && "font-bold"}`}>
-                                        { item.name }
+                                        { item?.name??"" }
                                     </p>
                                     <p className={`${item.name === "Total" && "font-bold"}`}>
                                         {
                                             inCartItems && inCartItems.length
                                             ?
-                                                `${currencies.uk.sign} ${item.quantity}`
+                                                `${currencies.uk.sign} ${item?.quantity??""}`
                                             :
                                                 0
                                         }
